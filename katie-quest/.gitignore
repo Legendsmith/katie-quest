@@ -1,3 +1,4 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+katie-quest-docs/.obsidian/workspace.json
