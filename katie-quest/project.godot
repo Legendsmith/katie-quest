@@ -17,3 +17,14 @@ config/icon="res://icon.svg"
 [dotnet]
 
 project/assembly_name="Katie Quest"
+
+[file_customization]
+
+folder_colors={
+"res://audio/": "orange",
+"res://autoload/": "purple",
+"res://scripts/": "blue",
+"res://texture/": "orange",
+"res://ui/": "green",
+"res://world/": "yellow"
+}
