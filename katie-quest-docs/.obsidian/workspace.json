@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Roles and Expertise.md",
+                "file": "Project Direction.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Roles and Expertise"
+              "title": "Project Direction"
             }
           }
         ],
@@ -199,9 +199,9 @@
   },
   "active": "75eeb4571404ae71",
   "lastOpenFiles": [
-    "Project Direction.md",
-    "Roles and Expertise.md",
     "Style Guide.md",
+    "Roles and Expertise.md",
+    "Project Direction.md",
     "Project Style Guide.md",
     "Welcome.md"
   ]

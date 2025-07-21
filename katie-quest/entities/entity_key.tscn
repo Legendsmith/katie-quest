@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://boa0rmofxdtjg"]
+
+[ext_resource type="Shape2D" uid="uid://ctqg22ymnthjf" path="res://entities/terrain/tile.tres" id="1_7htmd"]
+[ext_resource type="Texture2D" uid="uid://bd61jd4dnllan" path="res://texture/test_katie_spritesheet_atlas.png" id="2_qrk3i"]
+
+[node name="WorldKey" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = ExtResource("1_7htmd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_qrk3i")
+region_enabled = true
+region_rect = Rect2(324, 68, 64, 64)

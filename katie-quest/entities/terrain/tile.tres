@@ -1,0 +1,5 @@
+[gd_resource type="RectangleShape2D" format=3 uid="uid://ctqg22ymnthjf"]
+
+[resource]
+resource_name = "TileBox"
+size = Vector2(64, 64)
