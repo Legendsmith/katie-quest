@@ -20,11 +20,16 @@ func _ready():
 		animation_player.play("locked")
 
 func unlock():
-	print_debug("Door locked")
+	print_debug("Door unlocked")
 	animation_player.play("unlock")
+	await animation_player.animation_finished
+	#locked = false
+	if door_check.has_overlapping_bodies():
+		animation_player.play("open")
 
 func lock():
 	animation_player.play("locked")
+	#locked = true
 
 func check_door(body:Node2D) -> void:
 	print_debug(body, " Checked door")
@@ -32,13 +37,12 @@ func check_door(body:Node2D) -> void:
 		return
 	var player:Player = body
 	if not locked:
+		open = true
 		animation_player.play("open")
 		return
 	if player.items.keys > 0:
 		player.items.keys -=1
 		unlock()
-		await animation_player.animation_finished
-	animation_player.play("locked")
 	
 	
 func get_view_label_text():
@@ -49,6 +53,7 @@ func get_view_label_text():
 func close_door(_body:Node2D=null):
 	if open:
 		animation_player.play("close")
+		open = false
 	
 
 func enter_door(body:Node2D):

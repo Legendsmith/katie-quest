@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://fuwuaasmd6de"]
+[gd_scene load_steps=15 format=4 uid="uid://fuwuaasmd6de"]
 
 [ext_resource type="TileSet" uid="uid://cbhx5sipfm8mt" path="res://shared/wall_tiles.tres" id="1_jnfij"]
 [ext_resource type="PackedScene" uid="uid://dky100pma11ld" path="res://entities/terrain/door.tscn" id="2_djfvv"]
@@ -9,7 +9,6 @@
 [ext_resource type="Script" uid="uid://ctqsb7cwvtkfg" path="res://scripts/interactable.gd" id="8_hm3r7"]
 [ext_resource type="Texture2D" uid="uid://bc7dci1w2kd5q" path="res://texture/light/light_spot_focused.png" id="8_iltst"]
 [ext_resource type="PackedScene" uid="uid://bdvqrieymxq8y" path="res://ui/game_interface.tscn" id="9_g10co"]
-[ext_resource type="AudioStream" uid="uid://cla8kv4dd558y" path="res://audio/ring_inventory.wav" id="10_iltst"]
 [ext_resource type="PackedScene" uid="uid://boa0rmofxdtjg" path="res://entities/entity_key.tscn" id="11_kys62"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_djfvv"]
@@ -38,9 +37,11 @@ tile_set = SubResource("TileSet_eptgi")
 
 [node name="Door" parent="." instance=ExtResource("2_djfvv")]
 position = Vector2(256, 255)
+locked = true
 
 [node name="Door2" parent="." instance=ExtResource("2_djfvv")]
 position = Vector2(-128, 191)
+locked = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
@@ -97,8 +98,5 @@ shape = SubResource("CircleShape2D_g10co")
 
 [node name="GameInterface" parent="CanvasLayer" instance=ExtResource("9_g10co")]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("10_iltst")
-
-[node name="EntityKey" parent="AudioStreamPlayer" instance=ExtResource("11_kys62")]
-position = Vector2(120.005, -178.733)
+[node name="EntityKey" parent="." instance=ExtResource("11_kys62")]
+position = Vector2(288, 427)
