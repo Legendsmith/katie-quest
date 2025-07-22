@@ -3,12 +3,12 @@ Legendsmith
 ## Gameplay
 Legendsmith
 ## Programming
-Legendsmith
-Melkor
+Systems, Gameplay: Legendsmith
+Interface, Visual Novel: Melkor
 ## Video
-Fufu Mod team?
-Legendsmith
+EnderECM
 ## Writing
 Melkor
 EnderECM
-
+## Audio
+Tom (+ Narration)
