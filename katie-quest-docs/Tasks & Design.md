@@ -29,7 +29,7 @@ Minimum:
 - The rest can be text
 - Any longer voiced parts go in video.
 
-## Min Viable Product
+## Demo
 - Rough Sprites are ok
 - Basic Mechanics:
 	- Doors, Locks

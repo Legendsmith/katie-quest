@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://c8c3sid48d540" path="res://shared/test_tile.tres" id="2_53guk"]
 [ext_resource type="Texture2D" uid="uid://bd61jd4dnllan" path="res://texture/test_katie_spritesheet_atlas.png" id="2_534ga"]
 [ext_resource type="Texture2D" uid="uid://b24srcbjuk3wu" path="res://texture/katie_fear.png" id="5_dt2ce"]
-[ext_resource type="Texture2D" uid="uid://d0xklxs5qoy4c" path="res://texture/neutral_point_light.webp" id="6_b1hph"]
+[ext_resource type="Texture2D" uid="uid://d0xklxs5qoy4c" path="res://texture/light/neutral_point_light.webp" id="6_b1hph"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dt2ce"]
 texture = ExtResource("2_534ga")

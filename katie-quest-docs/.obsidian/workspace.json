@@ -78,7 +78,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       },
       {
         "id": "d6429f3e6aa98295",
@@ -245,11 +245,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "d69c1a4c34399b8e",
+  "active": "b38554843d6f609f",
   "lastOpenFiles": [
     "Tasks & Design.md",
-    "Level Notes.md",
     "Project Roadmap.md",
+    "Level Notes.md",
     "Roles and Expertise.md",
     "Style Guide.md",
     "Project Style Guide.md",
