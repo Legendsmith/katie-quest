@@ -1,43 +1,56 @@
 extends Area2D
 signal door_entered(door)
-@export var locked = false
-@export var open = false
+@export var locked:bool = false
+@export var open:bool = false
 @onready var door_sprite:Sprite2D =  $SpriteDoor
 @onready var bolt_sprite:Sprite2D =  $SpriteBolt
 @onready var lock_sprite:Sprite2D =  $SpriteLock
-@onready var animation_player = $AnimationPlayer
+@onready var animation_player:AnimationPlayer = $AnimationPlayer
 @onready var door_check = $DoorCheck
 
 
 func _ready():
+	print_debug("Door locked: ", locked)
+	body_entered.connect(enter_door)
 	door_check.body_entered.connect(check_door)
 	door_check.body_exited.connect(close_door)
+	door_check.interacted.connect(check_door)
 	animation_player.play("closed")
 	if locked:
-		lock()
-
-# func tilemap_data():
-#	global_position
+		animation_player.play("locked")
 
 func unlock():
+	print_debug("Door locked")
 	animation_player.play("unlock")
 
 func lock():
 	animation_player.play("locked")
 
-func check_door(body:Node2D):
-	print_debug(body, "Entered door")
-	if not body is Actor:
+func check_door(body:Node2D) -> void:
+	print_debug(body, " Checked door")
+	if not body is Player:
 		return
-	if locked:
-		animation_player.play("locked")
-	animation_player.play("open")
+	var player:Player = body
+	if not locked:
+		animation_player.play("open")
+		return
+	if player.items.keys > 0:
+		player.items.keys -=1
+		unlock()
+		await animation_player.animation_finished
+	animation_player.play("locked")
 	
+	
+func get_view_label_text():
+	if locked:
+		return "Locked"
+	return "Door"
 
 func close_door(_body:Node2D=null):
 	if open:
 		animation_player.play("close")
 	
 
-func enter_door():
+func enter_door(body:Node2D):
+	print_debug(body, " Entered Door")
 	door_entered.emit(self)

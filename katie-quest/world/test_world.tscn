@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=4 uid="uid://08s0mckyhap4"]
 
-[ext_resource type="Script" uid="uid://bedvbk7efy6ut" path="res://entities/actor.gd" id="1_tbnp1"]
+[ext_resource type="Script" uid="uid://bedvbk7efy6ut" path="res://entities/player.gd" id="1_tbnp1"]
 [ext_resource type="TileSet" uid="uid://c8c3sid48d540" path="res://shared/test_tile.tres" id="2_53guk"]
 [ext_resource type="Texture2D" uid="uid://bd61jd4dnllan" path="res://texture/test_katie_spritesheet_atlas.png" id="2_534ga"]
 [ext_resource type="Texture2D" uid="uid://b24srcbjuk3wu" path="res://texture/katie_fear.png" id="5_dt2ce"]

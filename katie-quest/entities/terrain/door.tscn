@@ -1,10 +1,11 @@
-[gd_scene load_steps=23 format=3 uid="uid://dky100pma11ld"]
+[gd_scene load_steps=24 format=3 uid="uid://dky100pma11ld"]
 
 [ext_resource type="Script" uid="uid://kqr1ft0hvgfe" path="res://entities/terrain/door.gd" id="1_i7dw7"]
 [ext_resource type="Texture2D" uid="uid://bpvdelorig0a7" path="res://texture/kq_sprite_0006_door_open.png" id="2_l50cf"]
 [ext_resource type="Texture2D" uid="uid://c7jaxktprptp" path="res://texture/kq_sprite_0005_door_closed.png" id="3_de14m"]
 [ext_resource type="Texture2D" uid="uid://cpaqa7itrr7k" path="res://texture/kq_sprite_0003_door_bolt.png" id="4_lawn3"]
 [ext_resource type="Texture2D" uid="uid://dgcbu1f30rmw2" path="res://texture/kq_sprite_0002_door_lock.png" id="5_d61lu"]
+[ext_resource type="Script" uid="uid://ctqsb7cwvtkfg" path="res://scripts/interactable.gd" id="5_vrqlg"]
 [ext_resource type="AudioStream" uid="uid://ckvymrgxh02iv" path="res://audio/qubodup-DoorClose01.ogg" id="6_lawn3"]
 [ext_resource type="AudioStream" uid="uid://hkkf5772o4uw" path="res://audio/qubodup-DoorOpen01.ogg" id="6_rrf83"]
 [ext_resource type="AudioStream" uid="uid://ctibdhdny14kb" path="res://audio/qubodup-DoorClose02.ogg" id="7_d61lu"]
@@ -18,7 +19,7 @@ size = Vector2(117, 56)
 size = Vector2(64, 35)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rs5pt"]
-size = Vector2(56, 26)
+size = Vector2(56, 62)
 
 [sub_resource type="Animation" id="Animation_kw2sj"]
 length = 0.001
@@ -96,7 +97,7 @@ tracks/5/keys = {
 }
 tracks/6/type = "value"
 tracks/6/imported = false
-tracks/6/enabled = true
+tracks/6/enabled = false
 tracks/6/path = NodePath(".:open")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
@@ -124,7 +125,7 @@ tracks/0/path = NodePath("SpriteDoor:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.2),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("3_de14m")]
@@ -168,6 +169,18 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0.2)
 }
 tracks/3/use_blend = true
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:open")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_7vvuq"]
 resource_name = "close"
@@ -218,7 +231,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_jrbiw"]
@@ -296,6 +309,18 @@ tracks/5/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:open")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_rs5pt"]
 random_pitch = 1.05
@@ -356,6 +381,18 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0.2)
 }
 tracks/3/use_blend = true
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:open")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_l67we"]
 resource_name = "unlock"
@@ -390,10 +427,10 @@ tracks/2/path = NodePath(".:locked")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.933333),
+"times": PackedFloat32Array(0.9),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1issr"]
@@ -427,6 +464,8 @@ scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_rrf83")
 
 [node name="LockBody" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 4
 
 [node name="LockShape" type="CollisionShape2D" parent="LockBody"]
 position = Vector2(0, -14.5)
@@ -434,12 +473,16 @@ shape = SubResource("RectangleShape2D_vrqlg")
 
 [node name="DoorCheck" type="Area2D" parent="."]
 monitorable = false
+script = ExtResource("5_vrqlg")
+view_label_default = "Door"
+metadata/_custom_type_script = "uid://ctqsb7cwvtkfg"
 
 [node name="DoorCheckShape" type="CollisionShape2D" parent="DoorCheck"]
-position = Vector2(0, 20)
+position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_rs5pt")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+deterministic = true
 libraries = {
 &"": SubResource("AnimationLibrary_1issr")
 }

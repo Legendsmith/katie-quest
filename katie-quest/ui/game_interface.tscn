@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdvqrieymxq8y"]
+
+[ext_resource type="Script" uid="uid://6g7p2id511i1" path="res://ui/game_interface.gd" id="1_aowqk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_aowqk"]
+font_size = 14
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 0.25098)
+shadow_offset = Vector2(0, -1)
+
+[node name="GameInterface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_aowqk")
+
+[node name="ViewLabel" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "View Label"
+label_settings = SubResource("LabelSettings_aowqk")

@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://boa0rmofxdtjg"]
+[gd_scene load_steps=4 format=3 uid="uid://boa0rmofxdtjg"]
 
 [ext_resource type="Shape2D" uid="uid://ctqg22ymnthjf" path="res://entities/terrain/tile.tres" id="1_7htmd"]
+[ext_resource type="Script" uid="uid://b8j2kxtbbp2yq" path="res://entities/entity_key.gd" id="1_rveyu"]
 [ext_resource type="Texture2D" uid="uid://bd61jd4dnllan" path="res://texture/test_katie_spritesheet_atlas.png" id="2_qrk3i"]
 
-[node name="WorldKey" type="Area2D"]
+[node name="EntityKey" type="Area2D"]
+script = ExtResource("1_rveyu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = ExtResource("1_7htmd")
