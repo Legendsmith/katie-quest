@@ -11,6 +11,7 @@ Katten messages via google form.
 
 
 Walls:
+- Concrete
 - Tile
 - Painted
 - Plasterboard

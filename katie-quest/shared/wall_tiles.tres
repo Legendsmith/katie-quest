@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=70 format=3 uid="uid://cbhx5sipfm8mt"]
+[gd_resource type="TileSet" load_steps=71 format=3 uid="uid://cbhx5sipfm8mt"]
 
 [ext_resource type="Texture2D" uid="uid://cfrwl5y5jfw7q" path="res://texture/terrain/kq_sprite_0014_walltop_n.png" id="1_io3qe"]
 [ext_resource type="Texture2D" uid="uid://2a1tlo1npmk" path="res://texture/terrain/kq_sprite_0015_walltop_ns.png" id="2_7kn3m"]
@@ -22,6 +22,9 @@ tile_data = PackedInt32Array(0, 5, 0, 65536, 1, 0, 131072, 2, 0, 196608, 2, 1, 2
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_lays0"]
 tile_data = PackedInt32Array(0, 65544, 1, 65536, 65537, 1, 131072, 65536, 1, 1, 3, 1, 65537, 65547, 0, 131073, 65547, 1, 2, 3, 1, 65538, 65547, 3, 131074, 65547, 3, 3, 8, 1, 65539, 2, 0, 131075, 1, 1)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_k06cx"]
+tile_data = PackedInt32Array(0, 4, 0, 65536, 4, 1, 131072, 131082, 4, 196608, 131086, 0, 262144, 65550, 0, 327680, 327690, 3, 1, 3, 0, 65537, 4, 1, 131073, 131082, 2, 196609, 262158, 0, 262145, 327694, 0, 327681, 10, 5)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_io3qe"]
 
@@ -1305,3 +1308,4 @@ sources/14 = SubResource("TileSetAtlasSource_io3qe")
 pattern_0 = SubResource("TileMapPattern_io3qe")
 pattern_1 = SubResource("TileMapPattern_7kn3m")
 pattern_2 = SubResource("TileMapPattern_lays0")
+pattern_3 = SubResource("TileMapPattern_k06cx")
