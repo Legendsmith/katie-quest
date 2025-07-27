@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Katie Quest"
-run/main_scene="uid://fuwuaasmd6de"
+run/main_scene="uid://wsffs2r5aclb"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
