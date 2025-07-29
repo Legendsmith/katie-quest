@@ -1,0 +1,77 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8d5478l3c7sx"]
+
+[ext_resource type="Script" uid="uid://dhqknurn1l6dc" path="res://ui/settings_menu.gd" id="1_h6jc8"]
+
+[node name="SettingsMenu" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+script = ExtResource("1_h6jc8")
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 2
+current_tab = 0
+
+[node name="Sound" type="MarginContainer" parent="TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Sound"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 21
+
+[node name="GridContainer" type="GridContainer" parent="TabContainer/Sound/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 2
+
+[node name="LabelMaster" type="Label" parent="TabContainer/Sound/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "Master"
+
+[node name="SliderMaster" type="HSlider" parent="TabContainer/Sound/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+value = 100.0
+
+[node name="LabelMusic" type="Label" parent="TabContainer/Sound/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "Music"
+
+[node name="SliderMusic" type="HSlider" parent="TabContainer/Sound/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+value = 50.0
+
+[node name="LabelEffects" type="Label" parent="TabContainer/Sound/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "Effects"
+
+[node name="SliderEffects" type="HSlider" parent="TabContainer/Sound/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+value = 50.0
+
+[node name="LabelVoices" type="Label" parent="TabContainer/Sound/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "Voices"
+
+[node name="SliderVoices" type="HSlider" parent="TabContainer/Sound/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+value = 50.0
