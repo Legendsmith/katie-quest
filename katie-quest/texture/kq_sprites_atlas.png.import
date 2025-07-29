@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pqtm437im44v"
-path="res://.godot/imported/kq_sprite_0021_walltop_se.png-83b2a654c275da46b48188b879313e27.ctex"
+uid="uid://bhqg528n57qwr"
+path="res://.godot/imported/kq_sprites_atlas.png-ccacc341a0ed61d9fa9684536147b4ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://texture/terrain/kq_sprite_0021_walltop_se.png"
-dest_files=["res://.godot/imported/kq_sprite_0021_walltop_se.png-83b2a654c275da46b48188b879313e27.ctex"]
+source_file="res://texture/kq_sprites_atlas.png"
+dest_files=["res://.godot/imported/kq_sprites_atlas.png-ccacc341a0ed61d9fa9684536147b4ae.ctex"]
 
 [params]
 

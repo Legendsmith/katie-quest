@@ -1,9 +1,8 @@
-[gd_resource type="TileSet" load_steps=71 format=3 uid="uid://cbhx5sipfm8mt"]
+[gd_resource type="TileSet" load_steps=70 format=3 uid="uid://cbhx5sipfm8mt"]
 
 [ext_resource type="Texture2D" uid="uid://cfrwl5y5jfw7q" path="res://texture/terrain/kq_sprite_0014_walltop_n.png" id="1_io3qe"]
 [ext_resource type="Texture2D" uid="uid://2a1tlo1npmk" path="res://texture/terrain/kq_sprite_0015_walltop_ns.png" id="2_7kn3m"]
 [ext_resource type="Texture2D" uid="uid://bur8481n4trqr" path="res://texture/terrain/wall_tiles.png" id="3_lays0"]
-[ext_resource type="Texture2D" uid="uid://uwu21fvhstug" path="res://texture/floor_tiles.png" id="4_k06cx"]
 [ext_resource type="Texture2D" uid="uid://dh2cx8ghxwjuq" path="res://texture/terrain/walltop_pillar.png" id="5_x7tsa"]
 [ext_resource type="Texture2D" uid="uid://bnapap03uaue1" path="res://texture/terrain/kq_sprite_0016_walltop_s.png" id="6_3esd4"]
 [ext_resource type="Texture2D" uid="uid://0gice8lcje2m" path="res://texture/terrain/kq_sprite_0017_walltop_w.png" id="7_ygpcw"]
@@ -545,7 +544,6 @@ texture_region_size = Vector2i(32, 32)
 5:5/0/terrains_peering_bit/top_right_corner = 1
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_386xo"]
-texture = ExtResource("4_k06cx")
 texture_region_size = Vector2i(32, 32)
 0:0/next_alternative_id = 2
 0:0/0 = 0
