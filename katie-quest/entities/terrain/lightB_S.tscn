@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://jppv5472ps3x"]
+
+[ext_resource type="Texture2D" uid="uid://d0xklxs5qoy4c" path="res://texture/light/neutral_point_light.webp" id="1_q45ny"]
+[ext_resource type="Script" uid="uid://de4wic6w8bk0m" path="res://entities/terrain/light.gd" id="2_v5jxx"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q45ny"]
+load_path = "res://.godot/imported/kq_sprites_atlas.png-ccacc341a0ed61d9fa9684536147b4ae.ctex"
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_q45ny"]
+polygon = PackedVector2Array(18, 4, -19, 4, -19, 7, 18, 7)
+
+[node name="Light" type="PointLight2D"]
+light_mask = 0
+shadow_enabled = true
+texture = ExtResource("1_q45ny")
+script = ExtResource("2_v5jxx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -27)
+texture = SubResource("CompressedTexture2D_q45ny")
+region_enabled = true
+region_rect = Rect2(516, 68, 64, 64)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(0, -4)
+occluder = SubResource("OccluderPolygon2D_q45ny")

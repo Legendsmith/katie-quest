@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dbedhisidluun"]
+
+[ext_resource type="Texture2D" uid="uid://b8eeyxcdjtdqw" path="res://texture/light/bar_light.png" id="1_lgajf"]
+[ext_resource type="Script" uid="uid://de4wic6w8bk0m" path="res://entities/terrain/light.gd" id="2_pqeni"]
+[ext_resource type="Texture2D" uid="uid://bhqg528n57qwr" path="res://texture/kq_sprites_atlas.png" id="3_fp7eg"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_lgajf"]
+polygon = PackedVector2Array(-61, -6, -61, 0, 60, 0, 60, -6)
+
+[node name="Light" type="PointLight2D"]
+light_mask = 0
+shadow_enabled = true
+texture = ExtResource("1_lgajf")
+script = ExtResource("2_pqeni")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 14)
+texture = ExtResource("3_fp7eg")
+region_enabled = true
+region_rect = Rect2(388, 4, 128, 64)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_lgajf")
