@@ -45,8 +45,9 @@ Steps:
 1. Audio Level mechanics
 2. Twitch Chat integration
 3. Twitch Stream Ending
-# NPCs
 
+# Probable NPCs
+This list(s) just for scope purposes
 1.  Fufu
 2.  Shezabubadino
 3.  Saiiren
