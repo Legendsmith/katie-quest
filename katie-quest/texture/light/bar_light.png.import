@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pqtm437im44v"
-path="res://.godot/imported/kq_sprite_0021_walltop_se.png-83b2a654c275da46b48188b879313e27.ctex"
+uid="uid://b8eeyxcdjtdqw"
+path="res://.godot/imported/bar_light.png-cb25efc151934a3da63a70033f595d59.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://texture/terrain/kq_sprite_0021_walltop_se.png"
-dest_files=["res://.godot/imported/kq_sprite_0021_walltop_se.png-83b2a654c275da46b48188b879313e27.ctex"]
+source_file="res://texture/light/bar_light.png"
+dest_files=["res://.godot/imported/bar_light.png-cb25efc151934a3da63a70033f595d59.ctex"]
 
 [params]
 

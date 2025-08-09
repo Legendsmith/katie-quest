@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bur8481n4trqr"
-path="res://.godot/imported/wall_tiles.png-f373915f318f02339c596123268e22d5.ctex"
+uid="uid://bhqg528n57qwr"
+path="res://.godot/imported/kq_sprites_atlas.png-ccacc341a0ed61d9fa9684536147b4ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://texture/terrain/wall_tiles.png"
-dest_files=["res://.godot/imported/wall_tiles.png-f373915f318f02339c596123268e22d5.ctex"]
+source_file="res://texture/kq_sprites_atlas.png"
+dest_files=["res://.godot/imported/kq_sprites_atlas.png-ccacc341a0ed61d9fa9684536147b4ae.ctex"]
 
 [params]
 
