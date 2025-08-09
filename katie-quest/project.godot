@@ -23,6 +23,7 @@ driver/enable_input=true
 
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 Global="*res://autoload/global.gd"
+VerySimpleTwitch="*res://addons/very-simple-twitch/twitch_node.gd"
 
 [dialogic]
 
@@ -40,7 +41,7 @@ project/assembly_name="Katie Quest"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/gut/plugin.cfg", "res://addons/very-simple-twitch/plugin.cfg")
 
 [file_customization]
 
@@ -117,3 +118,7 @@ dialogic_default_action={
 textures/canvas_textures/default_texture_filter=0
 lights_and_shadows/directional_shadow/soft_shadow_filter_quality=3
 lights_and_shadows/positional_shadow/soft_shadow_filter_quality=3
+
+[very_simple_twitch]
+
+config/client_id="1u4g7nwmt9u8qrheb25a7j5ai87dk6"
