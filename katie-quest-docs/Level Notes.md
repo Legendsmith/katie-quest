@@ -11,3 +11,7 @@ After video, door is open.
 Final Room will have changed based on the game:
 - Fufu Chibi Plushi
 - baku/deku poster
+
+ALTERNATE
+- Final room is filled with all the NPCs and kattens, and they work with the twitch integration.
+

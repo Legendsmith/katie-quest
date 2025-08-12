@@ -1,0 +1,34 @@
+List of people you can include:
+Fufu
+Shezabubadino
+Saiiren
+Bipsy
+Zentreya
+Fenari Mori
+Togichu
+GhostData_
+SixteenInMono
+Sulia
+UghItsT0m
+Heavenly
+Zephy
+Fraiki
+Togi
+Rikku
+Mystic
+Dusty
+Cottontail
+Vexoria
+Quinscy
+Buffpup
+Isaa
+Ruben
+Spelly 
+EllyEN
+NeoSenpai
+ShyLily?
+Trickiwi
+AtteraNox
+Vampiia    
+Yoclesh
+HypaVox

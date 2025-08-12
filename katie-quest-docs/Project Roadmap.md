@@ -36,6 +36,7 @@ Mod Team Consulting:
 - Katten text dialogues
 - Dynamic Music
 - Complete Terrain Assets
+- Twitch Chat integration
 
 Steps:
 - Reach out to other people for NPC dialogue. - Mods will handle this.
@@ -76,7 +77,7 @@ Plus 20 (Mods):
 ## Potential:
 Zephyrianna
 CottontailVA
-FutakuchiMana‬
+FutakuchiMana
 Isaa
 Fraiki
 ## Full Potential List:
@@ -109,3 +110,7 @@ Fraiki
 - Rykku
 - GX AURA
 - Isaa
+2. Twitch Stream Ending
+
+
+See NPC List
