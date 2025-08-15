@@ -462,3 +462,4 @@ libraries = {
 playback_auto_capture = false
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+bus = &"Effects"
