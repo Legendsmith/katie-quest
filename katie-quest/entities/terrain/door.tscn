@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dky100pma11ld"]
+[gd_scene load_steps=26 format=3 uid="uid://dky100pma11ld"]
 
 [ext_resource type="Script" uid="uid://kqr1ft0hvgfe" path="res://entities/terrain/door.gd" id="1_i7dw7"]
 [ext_resource type="Texture2D" uid="uid://bhqg528n57qwr" path="res://texture/kq_sprites_atlas.png" id="2_lawn3"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://ctibdhdny14kb" path="res://audio/qubodup-DoorClose02.ogg" id="7_d61lu"]
 [ext_resource type="AudioStream" uid="uid://p2ocpwxoigav" path="res://audio/qubodup-DoorOpen02.ogg" id="7_vrqlg"]
 [ext_resource type="AudioStream" uid="uid://bvvtqcvim8iuy" path="res://audio/qubodup-DoorClose03.ogg" id="8_rrf83"]
+[ext_resource type="AudioStream" uid="uid://dh0e1q3jdulfb" path="res://audio/metal-clash.wav" id="9_d61lu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rrf83"]
 atlas = ExtResource("2_lawn3")
@@ -117,25 +118,13 @@ tracks/0/keys = {
 "update": 1,
 "values": [true]
 }
-tracks/1/type = "value"
+tracks/1/type = "audio"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("LockBody/LockShape:disabled")
+tracks/1/path = NodePath("AudioStreamPlayer2D")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.25),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "audio"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AudioStreamPlayer2D")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
@@ -143,14 +132,14 @@ tracks/2/keys = {
 }],
 "times": PackedFloat32Array(0.2)
 }
-tracks/2/use_blend = true
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("SpriteDoor:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
+tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SpriteDoor:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0.25),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -293,25 +282,13 @@ tracks/0/keys = {
 "update": 1,
 "values": [false]
 }
-tracks/1/type = "value"
+tracks/1/type = "audio"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("LockBody/LockShape:disabled")
+tracks/1/path = NodePath("AudioStreamPlayer2D")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.2),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "audio"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AudioStreamPlayer2D")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
@@ -319,18 +296,30 @@ tracks/2/keys = {
 }],
 "times": PackedFloat32Array(0.2)
 }
-tracks/2/use_blend = true
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("SpriteDoor:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.21),
+tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SpriteDoor:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("LockBody/LockShape:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_l67we"]
@@ -343,7 +332,7 @@ tracks/0/path = NodePath("SpriteBolt:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.766667),
+"times": PackedFloat32Array(0.7),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
@@ -367,7 +356,7 @@ tracks/2/path = NodePath(".:locked")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.8),
+"times": PackedFloat32Array(0.75),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
@@ -384,6 +373,21 @@ tracks/3/keys = {
 "update": 1,
 "values": [1]
 }
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AudioStreamPlayer2D")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("9_d61lu")
+}],
+"times": PackedFloat32Array(0.3)
+}
+tracks/4/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1issr"]
 _data = {
@@ -398,6 +402,7 @@ _data = {
 [node name="Door" type="Area2D"]
 monitorable = false
 script = ExtResource("1_i7dw7")
+locked = true
 
 [node name="SpriteDoor" type="Sprite2D" parent="."]
 texture = ExtResource("2_lawn3")
@@ -450,9 +455,9 @@ position = Vector2(0.5, 27)
 shape = SubResource("RectangleShape2D_rs5pt")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-deterministic = true
 libraries = {
 &"": SubResource("AnimationLibrary_1issr")
 }
+playback_auto_capture = false
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

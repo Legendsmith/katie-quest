@@ -51,7 +51,7 @@ func get_view_label_text():
 	return "Door"
 
 func close_door(_body:Node2D=null):
-	if open:
+	if not locked:
 		animation_player.play("close")
 		open = false
 	

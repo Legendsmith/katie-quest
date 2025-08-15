@@ -58,7 +58,7 @@ shape = SubResource("WorldBoundaryShape2D_n8cds")
 color = Color(0.00784314, 0.00784314, 0.0313726, 1)
 
 [node name="Player" parent="." instance=ExtResource("2_1sosw")]
-position = Vector2(736, 480)
+position = Vector2(264, 576)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -130,7 +130,7 @@ texture = ExtResource("11_noe61")
 texture_scale = 1.92
 
 [node name="PointLight2D4" type="PointLight2D" parent="."]
-position = Vector2(1040, 568)
+position = Vector2(584, 232)
 color = Color(1, 1, 0.811765, 1)
 shadow_enabled = true
 texture = ExtResource("11_noe61")
