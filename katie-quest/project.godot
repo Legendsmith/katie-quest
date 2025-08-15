@@ -28,7 +28,9 @@ Fade="*res://scenes/fade.tscn"
 
 [dialogic]
 
-directories/dch_directory={}
+directories/dch_directory={
+"katie": "res://shared/katie.dch"
+}
 directories/dtl_directory={
 "test_timeline": "res://shared/test_timeline.dtl"
 }
