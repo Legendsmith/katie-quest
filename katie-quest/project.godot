@@ -24,6 +24,7 @@ driver/enable_input=true
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 Global="*res://autoload/global.gd"
 VerySimpleTwitch="*res://addons/very-simple-twitch/twitch_node.gd"
+Fade="*res://scenes/fade.tscn"
 
 [dialogic]
 

@@ -10,10 +10,10 @@ func _on_ButtonContinue_pressed():
   pass
 
 func _on_ButtonNewGame_pressed():
-  get_tree().change_scene_to_file("res://world/demo_level.tscn")
+  Fade.change_scene("res://world/demo_level.tscn")
 
 func _on_ButtonSettings_pressed():
-  get_tree().change_scene_to_file("res://ui/settings_menu.tscn")
+  Fade.change_scene("res://ui/settings_menu.tscn")
 
 func _on_ButtonExit_pressed():
   get_tree().quit()
