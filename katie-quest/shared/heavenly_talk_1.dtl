@@ -1,0 +1,7 @@
+join katie rightmost
+join heavenly_father leftmost
+heavenly_father: Hi Katie
+katie: Hi, where are we even?
+heavenly_father: The Bottom Energy Harvesting Array
+[wait_input hide_text="false"]
+[end_timeline]

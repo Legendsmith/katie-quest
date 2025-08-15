@@ -10,6 +10,9 @@ extends CharacterBody2D
 var move_target:Vector2
 var moving = false
 
+func _ready():
+	add_to_group("player")
+
 func play_sound(sound:AudioStream):
 	audio_player.stream=sound
 	audio_player.play()

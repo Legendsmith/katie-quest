@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://bt24cbmjrxtjk"]
+[gd_scene load_steps=20 format=4 uid="uid://bt24cbmjrxtjk"]
 
 [ext_resource type="Script" uid="uid://bf6qk0nlhoxep" path="res://world/level.gd" id="1_1rrtn"]
 [ext_resource type="PackedScene" uid="uid://fi1vweeb0dv7" path="res://entities/player.tscn" id="2_1sosw"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://d0xklxs5qoy4c" path="res://texture/light/neutral_point_light.webp" id="12_noe61"]
 [ext_resource type="PackedScene" uid="uid://dky100pma11ld" path="res://entities/terrain/door.tscn" id="13_gi7le"]
 [ext_resource type="PackedScene" uid="uid://boa0rmofxdtjg" path="res://entities/entity_key.tscn" id="14_f6b2c"]
+[ext_resource type="PackedScene" uid="uid://c345ttforl3od" path="res://entities/character_interactable.tscn" id="15_f6b2c"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6ehlu"]
 normal = Vector2(1, 0)
@@ -64,7 +65,6 @@ position = Vector2(264, 576)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="GameInterface" parent="CanvasLayer" instance=ExtResource("5_yba56")]
-visible = false
 
 [node name="Light" parent="." instance=ExtResource("5_aw11e")]
 visible = false
@@ -155,3 +155,6 @@ visibility_layer = 3
 position = Vector2(-176, -208)
 energy = 0.2
 range_item_cull_mask = 0
+
+[node name="CharacterInteractable" parent="." instance=ExtResource("15_f6b2c")]
+position = Vector2(352, 1024)

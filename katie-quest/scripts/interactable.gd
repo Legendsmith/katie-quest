@@ -3,7 +3,7 @@ extends Area2D
 signal interacted(player_actor:Node2D)
 const VIEW_LABEL_TEXT_FUNCTION = "get_view_label_text"
 @export var view_label_default:String = ""
-@export var auto_interact:bool = true
+@export var auto_interact:bool = false
 @export var cursor_shape:Input.CursorShape = Input.CursorShape.CURSOR_POINTING_HAND
 var _get_view_label_text:Callable = func(): return view_label_default
 ## Used if the parent or owner do not have view label functionality.

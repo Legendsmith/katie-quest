@@ -2,22 +2,22 @@
 "@path": "res://addons/dialogic/Resources/character.gd",
 "@subpath": NodePath(""),
 &"_translation_id": "",
-&"color": Color(0.972549, 0.815686, 0.615686, 1),
+&"color": Color(0.133333, 0.745098, 0.290196, 1),
 &"custom_info": {
 "sound_mood_default": "",
 "sound_moods": {},
 "style": ""
 },
-&"default_portrait": "katie_fear",
+&"default_portrait": "heavenly",
 &"description": "",
-&"display_name": "Katie",
+&"display_name": "Heavenly Father",
 &"mirror": false,
-&"nicknames": ["Katie", "Kat"],
+&"nicknames": ["Heavenly"],
 &"offset": Vector2(0, 0),
 &"portraits": {
-"katie_fear": {
+"heavenly": {
 "export_overrides": {
-"image": "\"res://texture/katie_fear.png\""
+"image": "\"res://texture/heavenly_bust.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
