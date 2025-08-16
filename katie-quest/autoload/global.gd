@@ -11,3 +11,9 @@ func grid_snap(tile_layer, node:Node2D):
 
 func set_light_level(new_energy:float):
 	light_level.emit(new_energy)
+
+func do_timeline(timeline):
+	get_tree().call_group("player","set_process",false)
+	Dialogic.start(timeline)
+	await Dialogic.timeline_ended
+	get_tree().call_group("player","set_process",true)

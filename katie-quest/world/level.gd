@@ -10,10 +10,7 @@ func _ready():
 	level_camera.limit_top = int($WorldBounds.get_child(1).position.y)
 	level_camera.limit_right = int($WorldBounds.get_child(2).position.x)
 	level_camera.limit_bottom = int($WorldBounds.get_child(3).position.y)
-	get_tree().call_group("player","set_process",false)
-	Dialogic.start("res://shared/test_timeline.dtl")
-	await Dialogic.timeline_ended
-	get_tree().call_group("player","set_process",true)
+	Global.do_timeline("res://shared/test_timeline.dtl")
 
 func _process(_delta):
 	level_camera.global_position = player.global_position

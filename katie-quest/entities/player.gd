@@ -6,8 +6,8 @@ extends CharacterBody2D
 @export var items:Inventory
 
 @onready var audio_player:AudioStreamPlayer = $AudioStreamPlayer
-
 var move_target:Vector2
+var facing:Vector2 = Vector2.RIGHT
 var moving = false
 
 func _ready():
@@ -28,9 +28,12 @@ func _process(_delta):
 
 
 func movement():
-	var new_input:Vector2 = Input.get_vector(&"move_left", &"move_right", &"move_up", &"move_down")
-	if new_input.is_zero_approx(): # early exit
+	var input_dir:Vector2 = Input.get_vector(&"move_left", &"move_right", &"move_up", &"move_down")
+	if input_dir.is_zero_approx(): # early exit
 		moving = false
 		return
-	move_target = global_position + (new_input * Vector2(Global.TILE_SIZE))
+	var angle = input_dir.angle() / (PI/2)
+	angle = wrapi(int(angle), 0, 4)
+	$AnimationPlayer.play("look_"+str(angle))
+	move_target = global_position + (input_dir * Vector2(Global.TILE_SIZE))
 	moving = true

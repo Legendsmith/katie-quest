@@ -23,7 +23,4 @@ func dialog(player:Node2D):
 	print_debug(player)
 	if is_ancestor_of(player): 
 		return
-	get_tree().call_group("player","set_process",false)
-	Dialogic.start(timelines[0])
-	await Dialogic.timeline_ended
-	get_tree().call_group("player","set_process",true)
+	Global.do_timeline(timelines[0])
