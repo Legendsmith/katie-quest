@@ -9,6 +9,8 @@ bounce = 0.25
 size = Vector2(56, 56)
 
 [node name="EmoteBody" type="RigidBody2D"]
+collision_layer = 13
+collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_6j2tc")
 script = ExtResource("1_ku76i")
 

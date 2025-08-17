@@ -1,6 +1,6 @@
 extends Node
 signal light_level(energy:float)
-const TILE_SIZE:Vector2i = Vector2i(64,64)
+const TILE_SIZE:Vector2i = Vector2i(128,128)
 
 var view_label_string:String = ""
 
