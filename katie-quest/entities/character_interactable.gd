@@ -2,10 +2,14 @@ extends Interactable
 @export var character_name = ""
 @export var timelines:Array[DialogicTimeline]
 
-
+@onready var speech_bubble:Node2D = $SpeechBubble
 func _ready():
-	pass
+	VerySimpleTwitch.chat_message_received.connect(chat_talk)
 
+func chat_talk(chatter:VSTChatter):
+	if chatter.tags.display_name == character_name:
+		speech_bubble.set_text(chatter.message)
+		
 
 func on_interaction(actor:Node2D) -> void:
 	if not  actor is Player:

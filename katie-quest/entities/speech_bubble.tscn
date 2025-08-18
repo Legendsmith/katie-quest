@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://cqucqcdojjcsw"]
+
+[ext_resource type="Script" uid="uid://blrcalv7jy2hv" path="res://entities/speech_bubble.gd" id="1_ej4bd"]
+[ext_resource type="FontFile" uid="uid://vrrmdx83skor" path="res://addons/dialogic/Example Assets/Fonts/Roboto-Regular.ttf" id="2_kvmun"]
+[ext_resource type="FontFile" uid="uid://b5c0p00x6g6u5" path="res://addons/dialogic/Example Assets/Fonts/Roboto-Italic.ttf" id="3_jn0vn"]
+[ext_resource type="FontFile" uid="uid://cc4xli25271fd" path="res://addons/dialogic/Example Assets/Fonts/Roboto-Bold.ttf" id="4_q4l5j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jn0vn"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="SpeechBubble" type="Node2D"]
+script = ExtResource("1_ej4bd")
+
+[node name="Anchor" type="Node2D" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="Anchor"]
+offset_right = 40.0
+offset_bottom = 14.0
+size_flags_horizontal = 0
+
+[node name="TextBackground" type="Panel" parent="Anchor/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jn0vn")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Anchor/MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_kvmun")
+theme_override_fonts/italics_font = ExtResource("3_jn0vn")
+theme_override_fonts/bold_font = ExtResource("4_q4l5j")
+theme_override_font_sizes/normal_font_size = 14
+scroll_active = false
+autowrap_mode = 0
+tab_size = 2
+
+[node name="Timer" type="Timer" parent="."]
