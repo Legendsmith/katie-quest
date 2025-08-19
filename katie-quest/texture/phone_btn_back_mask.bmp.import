@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://bqj7kll53hcbn"
+path="res://.godot/imported/phone_btn_back_mask.bmp-2be1eaadd1f47c3d52188d044be392ff.res"
+
+[deps]
+
+source_file="res://texture/phone_btn_back_mask.bmp"
+dest_files=["res://.godot/imported/phone_btn_back_mask.bmp-2be1eaadd1f47c3d52188d044be392ff.res"]
+
+[params]
+
+create_from=0
+threshold=0.5
