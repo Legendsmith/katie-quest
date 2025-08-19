@@ -2,7 +2,7 @@
 
 [ext_resource type="Shape2D" uid="uid://ctqg22ymnthjf" path="res://entities/terrain/tile.tres" id="1_7htmd"]
 [ext_resource type="Script" uid="uid://b8j2kxtbbp2yq" path="res://entities/entity_key.gd" id="1_rveyu"]
-[ext_resource type="Texture2D" uid="uid://bhqg528n57qwr" path="res://texture/kq_sprites_atlas.png" id="3_rveyu"]
+[ext_resource type="Texture2D" uid="uid://bd61jd4dnllan" path="res://texture/test_katie_spritesheet_atlas.png" id="2_qrk3i"]
 
 [node name="EntityKey" type="Area2D"]
 script = ExtResource("1_rveyu")
@@ -11,6 +11,6 @@ script = ExtResource("1_rveyu")
 shape = ExtResource("1_7htmd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("3_rveyu")
+texture = ExtResource("2_qrk3i")
 region_enabled = true
-region_rect = Rect2(644, 196, 64, 64)
+region_rect = Rect2(324, 68, 64, 64)
