@@ -16,12 +16,11 @@ func _ready():
 	door_check.body_exited.connect(close_door)
 	door_check.interacted.connect(check_door)
 	animation_player.play("closed")
-	door_check.enable_auto_interact()
 	if locked:
 		animation_player.play("locked")
 
 func unlock():
-	#print_debug("Door unlocked")
+	print_debug("Door unlocked")
 	animation_player.play("unlock")
 	await animation_player.animation_finished
 	#locked = false
@@ -33,7 +32,7 @@ func lock():
 	#locked = true
 
 func check_door(body:Node2D) -> void:
-	#print_debug(body, " Checked door")
+	print_debug(body, " Checked door")
 	if not body is Player:
 		return
 	var player:Player = body
@@ -52,11 +51,11 @@ func get_view_label_text():
 	return "Door"
 
 func close_door(_body:Node2D=null):
-	if not locked:
+	if open:
 		animation_player.play("close")
 		open = false
 	
 
 func enter_door(body:Node2D):
-	#print_debug(body, " Entered Door")
+	print_debug(body, " Entered Door")
 	door_entered.emit(self)
