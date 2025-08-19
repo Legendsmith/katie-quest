@@ -13,5 +13,5 @@ func on_interaction(actor:Node2D) -> void:
 	actor.items.keys+=1
 	queue_free()
 
-	
-	
+func get_view_label_text():
+	return "Key"

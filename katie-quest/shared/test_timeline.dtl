@@ -1,1 +1,5 @@
 [background fade="0.0"]
+join katie right
+katie: Where am I?
+[wait_input hide_text="false"]
+[end_timeline]

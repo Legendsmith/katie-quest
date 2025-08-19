@@ -1,0 +1,29 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(0.133333, 0.745098, 0.290196, 1),
+&"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+&"default_portrait": "heavenly",
+&"description": "",
+&"display_name": "Heavenly Father",
+&"mirror": false,
+&"nicknames": ["Heavenly"],
+&"offset": Vector2(0, 0),
+&"portraits": {
+"heavenly": {
+"export_overrides": {
+"image": "\"res://texture/heavenly_bust.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+&"scale": 0.5
+}

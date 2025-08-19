@@ -13,7 +13,16 @@ func _ready():
 	collision_mask = 2
 	interact_ray.enabled = false
 	interact_ray.collision_mask = 3
+	set_process(false)
+	mouse_entered.connect(enable)
+	mouse_exited.connect(disable)
 
+
+func enable():
+	set_process(true)
+func disable():
+	Global.view_label_string=""
+	set_process(false)
 
 func _process(_delta):
 	Global.view_label_string = ""
@@ -26,10 +35,7 @@ func _process(_delta):
 		var target = interact_ray.get_collider()
 		Input.set_default_cursor_shape(target.cursor_shape)
 		Global.view_label_string = target.call(Interactable.VIEW_LABEL_TEXT_FUNCTION)
-	
-
-func _input(event):
-	if event.is_action_released(&"primary_button") and interact_ray.get_collider() is Interactable:
+	if Input.is_action_just_pressed(&"primary_button") and interact_ray.get_collider() is Interactable:
 		var interaction_target = interact_ray.get_collider()
 		interaction_target.on_interaction(owner)
 
