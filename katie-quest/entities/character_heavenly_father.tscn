@@ -1,0 +1,9 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcwq5iommc0dy"]
+
+[ext_resource type="PackedScene" uid="uid://c345ttforl3od" path="res://entities/character_interactable.tscn" id="1_dwtcp"]
+[ext_resource type="Script" uid="uid://bnhfvut6ugci8" path="res://addons/dialogic/Resources/timeline.gd" id="2_orlm0"]
+[ext_resource type="Resource" uid="uid://brnm0b8revyxd" path="res://shared/heavenly_talk_1.dtl" id="3_fbew6"]
+
+[node name="Character" instance=ExtResource("1_dwtcp")]
+character_name = "Heavenly Father"
+timelines = Array[ExtResource("2_orlm0")]([ExtResource("3_fbew6")])

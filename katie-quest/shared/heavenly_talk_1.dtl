@@ -1,6 +1,11 @@
 join katie rightmost
 join heavenly_father leftmost
+[voice path="res://audio/heavenly_hi_katie.wav" volume="0.0" bus="Voices"]
 heavenly_father: Hi Katie
-katie: Hi, where are we even?
-heavenly_father: The Kat Rooms
+katie: Hey. You don't sound so good, are you hurt?
+heavenly_father: I'll be fine, but it is dangerous here.
+heavenly_father: Here I found this, you'll need it.
+[sound path="res://audio/leather_inventory.wav" volume="0.0" bus="Effects"]
+[Obtained Bringer of Fate]
+heavenly_father: You've got this.
 [end_timeline]
