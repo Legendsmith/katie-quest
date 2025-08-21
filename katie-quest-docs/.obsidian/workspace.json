@@ -9,34 +9,13 @@
         "dimension": 58.67659947414549,
         "children": [
           {
-            "id": "0455c90a214da780",
-            "type": "leaf",
-            "state": {
-              "type": "canvas",
-              "state": {
-                "file": "Design.canvas",
-                "viewState": {
-                  "x": 77.66628397793824,
-                  "y": -6.917215410880161,
-                  "zoom": -1.1102230246251565e-16
-                }
-              },
-              "icon": "lucide-layout-dashboard",
-              "title": "Design"
-            }
-          },
-          {
             "id": "85fe7792bc5bf035",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Project Direction.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Project Direction"
+              "title": "New tab"
             }
           },
           {
@@ -237,10 +216,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0455c90a214da780",
+  "active": "85fe7792bc5bf035",
   "lastOpenFiles": [
-    "Level Notes.md",
     "Design.canvas",
+    "Level Notes.md",
     "Style Guide.md",
     "Untitled.base",
     "Tasks & Design.md",

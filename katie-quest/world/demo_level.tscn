@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://bt24cbmjrxtjk"]
+[gd_scene load_steps=20 format=4 uid="uid://bt24cbmjrxtjk"]
 
 [ext_resource type="Script" uid="uid://bf6qk0nlhoxep" path="res://world/level.gd" id="1_1rrtn"]
 [ext_resource type="PackedScene" uid="uid://fi1vweeb0dv7" path="res://entities/player.tscn" id="2_1sosw"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dky100pma11ld" path="res://entities/terrain/door.tscn" id="13_gi7le"]
 [ext_resource type="PackedScene" uid="uid://boa0rmofxdtjg" path="res://entities/entity_key.tscn" id="14_f6b2c"]
 [ext_resource type="PackedScene" uid="uid://c345ttforl3od" path="res://entities/character_interactable.tscn" id="15_f6b2c"]
+[ext_resource type="Script" uid="uid://banon2qmj5si7" path="res://scripts/twitch_int.gd" id="15_fqegd"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6ehlu"]
 normal = Vector2(1, 0)
@@ -155,3 +156,7 @@ range_item_cull_mask = 0
 
 [node name="CharacterInteractable" parent="." instance=ExtResource("15_f6b2c")]
 position = Vector2(160, 640)
+character_name = "Heavenly Father"
+
+[node name="Twitch" type="Node" parent="."]
+script = ExtResource("15_fqegd")
