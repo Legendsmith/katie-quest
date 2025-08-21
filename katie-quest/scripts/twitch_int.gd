@@ -1,6 +1,6 @@
 extends Node
 
-var channel_name: String = "melkornwah"
+var channel_name: String = "obkatiekat"
 
 func _init():
 	name = "Twitch"
