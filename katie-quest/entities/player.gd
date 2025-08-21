@@ -17,7 +17,8 @@ var moving = false
 func _ready():
 	add_to_group("player")
 
-func play_sound(sound:AudioStream):
+func play_sound(sound:AudioStream, bus:StringName=&"Effects"):
+	audio_player.bus=bus
 	audio_player.stream=sound
 	audio_player.play()
 

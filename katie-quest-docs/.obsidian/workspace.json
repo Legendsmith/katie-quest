@@ -6,7 +6,7 @@
       {
         "id": "4a4759fe4ba740c6",
         "type": "tabs",
-        "dimension": 58.67659947414548,
+        "dimension": 58.67659947414549,
         "children": [
           {
             "id": "0455c90a214da780",
@@ -16,9 +16,9 @@
               "state": {
                 "file": "Design.canvas",
                 "viewState": {
-                  "x": -185.39591693565018,
-                  "y": -688.3287362660101,
-                  "zoom": -0.6666666666666667
+                  "x": 77.66628397793824,
+                  "y": -6.917215410880161,
+                  "zoom": -1.1102230246251565e-16
                 }
               },
               "icon": "lucide-layout-dashboard",
@@ -58,7 +58,7 @@
       {
         "id": "fe3ff87a491c7b75",
         "type": "tabs",
-        "dimension": 41.32340052585452,
+        "dimension": 41.32340052585451,
         "children": [
           {
             "id": "b38554843d6f609f",
@@ -239,13 +239,13 @@
   },
   "active": "0455c90a214da780",
   "lastOpenFiles": [
-    "Style Guide.md",
+    "Level Notes.md",
     "Design.canvas",
+    "Style Guide.md",
     "Untitled.base",
     "Tasks & Design.md",
     "Roles and Expertise.md",
     "Project Roadmap.md",
-    "Level Notes.md",
     "Project Style Guide.md",
     "Welcome.md"
   ]
