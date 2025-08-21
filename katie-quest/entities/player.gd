@@ -7,7 +7,6 @@ extends CharacterBody2D
 @export var max_speed: float = 10000.0
 @export var acceleration: float = 3000.0
 @export var deceleration: float = 5000.0
-@export var bounce_force: float = 1000.0
 
 @onready var audio_player:AudioStreamPlayer = $AudioStreamPlayer
 var move_target:Vector2
@@ -60,10 +59,4 @@ func handle_wall_bouncing():
 			# Calculate bounce velocity
 			# Reflect the velocity off the surface normal
 			var bounce_velocity = velocity.bounce(collision_normal)
-			
-			# Apply bounce force (optional: scale it down for more realistic bouncing)
-			velocity = bounce_velocity * 0.4  # 60% of original velocity maintained
-			
-			# Optional: Add a minimum bounce force for more dramatic effect
-			if velocity.length() < bounce_force:
-				velocity = collision_normal * bounce_force
+			velocity = bounce_velocity * 0.4  

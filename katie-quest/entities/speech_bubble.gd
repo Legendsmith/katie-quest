@@ -10,9 +10,8 @@ const margin_offset = 8
 
 func _ready() -> void:
 	visible = false
-	set_text("test lmao")
 
-func set_text(text, wait_time = 3):
+func set_text(text, wait_time = 2.5):
 	visible = true
 
 	$Timer.wait_time = wait_time
@@ -31,7 +30,7 @@ func set_text(text, wait_time = 3):
 	# Animation
 	tween.tween_property(text_node, ^"visible_ratio", 1, duration)
 	tween.tween_property(margin, ^"size:x", int(text_size.x), duration)
-	tween.tween_property(anchor, ^"position", Vector2(-(text_size.x)/4,0), duration)
+	tween.tween_property(anchor, ^"position", Vector2(-(text_size.x)/2,0), duration/2)
 	tween.finished.connect($Timer.start)
 
 func _on_Timer_timeout() -> void:

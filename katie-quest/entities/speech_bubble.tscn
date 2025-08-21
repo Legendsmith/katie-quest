@@ -12,6 +12,7 @@ bg_color = Color(1, 1, 1, 1)
 script = ExtResource("1_ej4bd")
 
 [node name="Anchor" type="Node2D" parent="."]
+position = Vector2(-19, 0)
 
 [node name="MarginContainer" type="MarginContainer" parent="Anchor"]
 offset_right = 40.0

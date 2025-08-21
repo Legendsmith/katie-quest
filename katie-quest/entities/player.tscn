@@ -175,6 +175,7 @@ items = SubResource("Resource_qsoyl")
 current = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -29)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_qly61")
 hframes = 3
@@ -212,3 +213,7 @@ bus = &"Effects"
 libraries = {
 &"": SubResource("AnimationLibrary_x08pd")
 }
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="."]
+radius = 32.0
+avoidance_layers = 2

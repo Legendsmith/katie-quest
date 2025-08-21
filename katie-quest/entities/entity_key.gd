@@ -8,6 +8,8 @@ func _init():
 	super()
 
 func on_interaction(actor:Node2D) -> void:
+	if not actor is Player:
+		return
 	super(actor)
 	actor.play_sound(pickup_sound)
 	actor.items.keys+=1

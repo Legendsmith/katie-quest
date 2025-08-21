@@ -9,6 +9,8 @@ var total_emotes: int = 0
 var max_concurrent_downloads: int = 5
 var current_downloads: int = 0
 var download_queue: Array = []
+func _init():
+	name = "Twitch"
 func _ready():
 	VerySimpleTwitch.login_chat_anon(channel_name)
 	VerySimpleTwitch.chat_message_received.connect(print_chatter_message)
