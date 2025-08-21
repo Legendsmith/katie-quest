@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=25 format=3 uid="uid://1vg45lovvy1x"]
+[gd_resource type="TileSet" load_steps=24 format=3 uid="uid://1vg45lovvy1x"]
 
 [ext_resource type="Texture2D" uid="uid://bhqg528n57qwr" path="res://texture/kq_sprites_atlas.png" id="1_4vn8t"]
 
@@ -7,10 +7,7 @@ tile_data = PackedInt32Array(0, 65536, 1, 65536, 65536, 2, 131072, 196608, 4, 19
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_iihp4"]
 resource_name = "Standard"
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5oyf6"]
-resource_name = "Slip"
-friction = 0.9
+bounce = 0.2
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_4vn8t"]
 
@@ -600,7 +597,6 @@ texture_region_size = Vector2i(64, 64)
 6:7/0 = 0
 6:7/0/terrain_set = 0
 6:7/0/terrain = 3
-6:7/0/physics_layer_1/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 6:7/0/terrains_peering_bit/right_side = 3
 6:7/0/terrains_peering_bit/bottom_right_corner = 3
 6:7/0/terrains_peering_bit/bottom_side = 3
@@ -644,7 +640,6 @@ texture_region_size = Vector2i(64, 64)
 7:7/0 = 0
 7:7/0/terrain_set = 0
 7:7/0/terrain = 3
-7:7/0/physics_layer_1/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 7:7/0/terrains_peering_bit/right_side = 3
 7:7/0/terrains_peering_bit/bottom_right_corner = 3
 7:7/0/terrains_peering_bit/bottom_side = 3
@@ -657,7 +652,6 @@ texture_region_size = Vector2i(64, 64)
 6:8/0 = 0
 6:8/0/terrain_set = 0
 6:8/0/terrain = 3
-6:8/0/physics_layer_1/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 6:8/0/terrains_peering_bit/right_side = 3
 6:8/0/terrains_peering_bit/bottom_right_corner = 3
 6:8/0/terrains_peering_bit/bottom_side = 3
@@ -670,7 +664,6 @@ texture_region_size = Vector2i(64, 64)
 7:8/0 = 0
 7:8/0/terrain_set = 0
 7:8/0/terrain = 3
-7:8/0/physics_layer_1/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 7:8/0/terrains_peering_bit/right_side = 3
 7:8/0/terrains_peering_bit/bottom_right_corner = 3
 7:8/0/terrains_peering_bit/bottom_side = 3
@@ -683,7 +676,6 @@ texture_region_size = Vector2i(64, 64)
 7:9/0 = 0
 7:9/0/terrain_set = 0
 7:9/0/terrain = 4
-7:9/0/physics_layer_1/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 7:9/0/terrains_peering_bit/right_side = 4
 7:9/0/terrains_peering_bit/bottom_right_corner = 4
 7:9/0/terrains_peering_bit/bottom_side = 4
@@ -696,7 +688,6 @@ texture_region_size = Vector2i(64, 64)
 6:9/0 = 0
 6:9/0/terrain_set = 0
 6:9/0/terrain = 4
-6:9/0/physics_layer_1/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 6:9/0/terrains_peering_bit/right_side = 4
 6:9/0/terrains_peering_bit/bottom_right_corner = 4
 6:9/0/terrains_peering_bit/bottom_side = 4
@@ -709,7 +700,6 @@ texture_region_size = Vector2i(64, 64)
 6:10/0 = 0
 6:10/0/terrain_set = 0
 6:10/0/terrain = 4
-6:10/0/physics_layer_1/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 6:10/0/terrains_peering_bit/right_side = 4
 6:10/0/terrains_peering_bit/bottom_right_corner = 4
 6:10/0/terrains_peering_bit/bottom_side = 4
@@ -722,7 +712,6 @@ texture_region_size = Vector2i(64, 64)
 7:10/0 = 0
 7:10/0/terrain_set = 0
 7:10/0/terrain = 4
-7:10/0/physics_layer_1/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 7:10/0/terrains_peering_bit/right_side = 4
 7:10/0/terrains_peering_bit/bottom_right_corner = 4
 7:10/0/terrains_peering_bit/bottom_side = 4
@@ -781,8 +770,6 @@ occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 0
 physics_layer_0/physics_material = SubResource("PhysicsMaterial_iihp4")
-physics_layer_1/collision_layer = 0
-physics_layer_1/physics_material = SubResource("PhysicsMaterial_5oyf6")
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "f_carpet"
 terrain_set_0/terrain_0/color = Color(0.381129, 0.412188, 0.411798, 1)
