@@ -1,6 +1,7 @@
 extends Interactable
 @export var character_name = ""
 @export var timelines: Array[DialogicTimeline]
+var dialog_idx = 0
 
 @onready var speech_bubble: Node2D = $SpeechBubble
 func _ready():
@@ -27,4 +28,7 @@ func dialog(player: Node2D):
 	print_debug(player)
 	if is_ancestor_of(player):
 		return
-	Global.do_timeline(timelines[0])
+	if len(timelines) > 0:
+		Global.do_timeline(timelines[0])
+		await Dialogic.timeline_ended
+		dialog_idx = min(dialog_idx+1,len(timelines)-1)
