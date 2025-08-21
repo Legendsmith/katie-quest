@@ -9,8 +9,6 @@ extends CharacterBody2D
 
 static var global_message_count = 0
 
-var messages_passed_requirement = 5
-
 var messages_needed = 5
 var is_on_cooldown = false
 var cooldown_timer: Timer
