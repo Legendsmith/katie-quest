@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=3 uid="uid://b85ekuhr7fkt7"]
+
+[ext_resource type="TileSet" uid="uid://1vg45lovvy1x" path="res://shared/tilemap_terrain.tres" id="1_0u2o0"]
+[ext_resource type="Script" uid="uid://bf6qk0nlhoxep" path="res://world/level.gd" id="1_s5sgh"]
+[ext_resource type="PackedScene" uid="uid://bdvqrieymxq8y" path="res://ui/game_interface.tscn" id="2_jjmkw"]
+[ext_resource type="PackedScene" uid="uid://fi1vweeb0dv7" path="res://entities/player.tscn" id="4_ype84"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_s5sgh"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ype84"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_oh72w"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_paclj"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_s5sgh")
+
+[node name="TerrainLayer" type="TileMapLayer" parent="."]
+visibility_layer = 3
+tile_set = ExtResource("1_0u2o0")
+
+[node name="WorldBounds" type="StaticBody2D" parent="."]
+
+[node name="Left" type="CollisionShape2D" parent="WorldBounds"]
+position = Vector2(0, 264)
+shape = SubResource("WorldBoundaryShape2D_s5sgh")
+
+[node name="Top" type="CollisionShape2D" parent="WorldBounds"]
+position = Vector2(520, 0)
+shape = SubResource("WorldBoundaryShape2D_ype84")
+
+[node name="Right" type="CollisionShape2D" parent="WorldBounds"]
+position = Vector2(5376, 0)
+shape = SubResource("WorldBoundaryShape2D_oh72w")
+
+[node name="Bottom" type="CollisionShape2D" parent="WorldBounds"]
+position = Vector2(0, 3496)
+shape = SubResource("WorldBoundaryShape2D_paclj")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GameInterface" parent="CanvasLayer" instance=ExtResource("2_jjmkw")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("4_ype84")]
+position = Vector2(1248, 496)
