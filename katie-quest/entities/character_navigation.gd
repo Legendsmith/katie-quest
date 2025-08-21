@@ -7,35 +7,11 @@ extends CharacterBody2D
 @onready var nav_agent = $NavigationAgent2D
 @onready var speech_bubble = $SpeechBubble
 
-static var global_message_count = 0
-
-var messages_passed_requirement = 5
-
-var messages_needed = 5
-var is_on_cooldown = false
-var cooldown_timer: Timer
-
 func _ready():
-	VerySimpleTwitch.chat_message_received.connect(chat_talk)
-
-	cooldown_timer = Timer.new()
-	add_child(cooldown_timer)
-	cooldown_timer.wait_time = 5.0
-	cooldown_timer.one_shot = true
-	cooldown_timer.timeout.connect(_on_cooldown_finished)
-
+	add_to_group("kattens")
+	
 func chat_talk(chatter: VSTChatter):
-	if not chatter.tags.display_name in DataManager.npc_channel_list:
-		if is_on_cooldown:
-			return
+	speech_bubble.set_text(chatter.message)
 
-		global_message_count += 1
-
-		if global_message_count >= messages_needed:
-			speech_bubble.set_text(chatter.message)
-			global_message_count = 0
-			is_on_cooldown = true
-			cooldown_timer.start()
-
-func _on_cooldown_finished():
-	is_on_cooldown = false
+func _exit_tree() -> void:
+	remove_from_group("kattens")

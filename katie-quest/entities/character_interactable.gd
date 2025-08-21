@@ -15,7 +15,7 @@ func _ready():
 
 	add_child(cooldown_timer)
 
-	cooldown_timer.wait_time = 5.0
+	cooldown_timer.wait_time = 1.5
 	cooldown_timer.one_shot = true
 	cooldown_timer.timeout.connect(_on_cooldown_finished)
 

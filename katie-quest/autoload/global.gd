@@ -3,6 +3,7 @@ signal light_level(energy:float)
 const TILE_SIZE:Vector2i = Vector2i(128,128)
 const PLAYER_GROUP = "player"
 var view_label_string:String = ""
+var chat_manager:ChatManager
 
 
 func grid_snap(tile_layer, node:Node2D):
