@@ -157,7 +157,7 @@ range_item_cull_mask = 0
 
 [node name="CharacterInteractable" parent="." instance=ExtResource("15_f6b2c")]
 position = Vector2(160, 640)
-character_name = "Heavenly Father"
+view_label_default = ""
 
 [node name="Twitch" type="Node" parent="."]
 script = ExtResource("15_fqegd")
