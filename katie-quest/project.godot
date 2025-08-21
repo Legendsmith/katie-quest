@@ -25,6 +25,7 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 Global="*res://autoload/global.gd"
 VerySimpleTwitch="*res://addons/very-simple-twitch/twitch_node.gd"
 Fade="*res://scenes/fade.tscn"
+DataManager="*res://data/DataManager.gd"
 
 [dialogic]
 
@@ -75,6 +76,7 @@ folder_colors={
 "res://addons/": "gray",
 "res://audio/": "orange",
 "res://autoload/": "purple",
+"res://data/": "teal",
 "res://scripts/": "blue",
 "res://texture/": "orange",
 "res://ui/": "green",

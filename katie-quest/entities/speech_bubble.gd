@@ -16,16 +16,16 @@ func set_text(text, wait_time = 2.5):
 
 	$Timer.wait_time = wait_time
 	$Timer.stop()
-	
+
 	text_node.bbcode_text = text
-	
+
 	# Duration
 	var duration = text_node.text.length() * char_time
 	anchor.position = Vector2.ZERO
 	# Set the size of the speech bubble
 	var text_size = text_node.get_theme_font("normal_font").get_string_size(text_node.text)
 	margin.add_theme_constant_override(&"margin_right", margin_offset)
-	
+
 	var tween:Tween = get_tree().create_tween()
 	# Animation
 	tween.tween_property(text_node, ^"visible_ratio", 1, duration)
