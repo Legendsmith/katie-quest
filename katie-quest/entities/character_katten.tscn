@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dib68lw4dmqcn"]
+
+[ext_resource type="Script" uid="uid://ylfhctqygnjg" path="res://entities/character_navigation.gd" id="1_7tc5j"]
+[ext_resource type="Texture2D" uid="uid://bfjos5s36fceh" path="res://texture/katten.png" id="2_7tc5j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xdabd"]
+size = Vector2(40, 54)
+
+[node name="Character" type="RigidBody2D"]
+script = ExtResource("1_7tc5j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -25)
+shape = SubResource("RectangleShape2D_xdabd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -25)
+scale = Vector2(0.0564394, 0.0564394)
+texture = ExtResource("2_7tc5j")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]

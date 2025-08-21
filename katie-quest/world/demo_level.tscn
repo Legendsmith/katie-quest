@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://bt24cbmjrxtjk"]
+[gd_scene load_steps=21 format=4 uid="uid://bt24cbmjrxtjk"]
 
 [ext_resource type="Script" uid="uid://bf6qk0nlhoxep" path="res://world/level.gd" id="1_1rrtn"]
 [ext_resource type="PackedScene" uid="uid://fi1vweeb0dv7" path="res://entities/player.tscn" id="2_1sosw"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dky100pma11ld" path="res://entities/terrain/door.tscn" id="13_gi7le"]
 [ext_resource type="PackedScene" uid="uid://boa0rmofxdtjg" path="res://entities/entity_key.tscn" id="14_f6b2c"]
 [ext_resource type="PackedScene" uid="uid://c345ttforl3od" path="res://entities/character_interactable.tscn" id="15_f6b2c"]
+[ext_resource type="PackedScene" uid="uid://dib68lw4dmqcn" path="res://entities/character_katten.tscn" id="15_fqegd"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6ehlu"]
 normal = Vector2(1, 0)
@@ -25,6 +26,11 @@ normal = Vector2(0, 1)
 normal = Vector2(-1, 0)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_n8cds"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_f6b2c"]
+vertices = PackedVector2Array(5348, 3465, 60, 3465, 60, 25, 5348, 25)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(50, 15, 5358, 15, 5358, 3475, 50, 3475)])
 
 [node name="DemoLevel" type="Node2D"]
 y_sort_enabled = true
@@ -60,6 +66,10 @@ color = Color(0.0392157, 0.0392157, 0.0705882, 1)
 
 [node name="Player" parent="." instance=ExtResource("2_1sosw")]
 position = Vector2(224, 592)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(-16, 13)
+navigation_polygon = SubResource("NavigationPolygon_f6b2c")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -155,3 +165,7 @@ range_item_cull_mask = 0
 
 [node name="CharacterInteractable" parent="." instance=ExtResource("15_f6b2c")]
 position = Vector2(160, 640)
+
+[node name="Character" parent="." node_paths=PackedStringArray("target") instance=ExtResource("15_fqegd")]
+position = Vector2(863, 626)
+target = NodePath("../Player")
