@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://bdvqrieymxq8y"]
+[gd_scene load_steps=5 format=3 uid="uid://bdvqrieymxq8y"]
 
 [ext_resource type="Script" uid="uid://6g7p2id511i1" path="res://ui/game_interface.gd" id="1_aowqk"]
 
@@ -9,6 +9,12 @@ outline_color = Color(0, 0, 0, 1)
 shadow_size = 3
 shadow_color = Color(0, 0, 0, 0.25098)
 shadow_offset = Vector2(0, -1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aowqk"]
+bg_color = Color(0.592157, 1, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5phrw"]
+font_size = 12
 
 [node name="GameInterface" type="Control"]
 layout_mode = 3
@@ -26,3 +32,31 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "View Label"
 label_settings = SubResource("LabelSettings_aowqk")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+offset_top = 475.0
+offset_right = 1152.0
+offset_bottom = 627.0
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_bottom = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="StaminaBar" type="ProgressBar" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 150)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+mouse_filter = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_aowqk")
+max_value = 1.0
+step = 0.001
+fill_mode = 3
+show_percentage = false
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Stamina"
+label_settings = SubResource("LabelSettings_5phrw")

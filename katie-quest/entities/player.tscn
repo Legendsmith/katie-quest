@@ -1,8 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://fi1vweeb0dv7"]
+[gd_scene load_steps=14 format=3 uid="uid://fi1vweeb0dv7"]
 
 [ext_resource type="Script" uid="uid://bedvbk7efy6ut" path="res://entities/player.gd" id="1_e4p34"]
 [ext_resource type="Script" uid="uid://bf7a7hnbastkb" path="res://scripts/inventory.gd" id="2_qly61"]
-[ext_resource type="Texture2D" uid="uid://bc7dci1w2kd5q" path="res://texture/light/light_spot_focused.png" id="3_e4p34"]
 [ext_resource type="Texture2D" uid="uid://5122hxeem75s" path="res://texture/katie_sprite_atlas.png" id="3_qly61"]
 [ext_resource type="Script" uid="uid://b42jls7qv1isu" path="res://scripts/interaction_area.gd" id="4_rfe5m"]
 
@@ -165,10 +164,9 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
-collision_layer = 5
+collision_layer = 13
 collision_mask = 5
 script = ExtResource("1_e4p34")
-move_speed = 16000.0
 items = SubResource("Resource_qsoyl")
 
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
@@ -183,15 +181,6 @@ frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_rfe5m")
-
-[node name="PointLight2D" type="PointLight2D" parent="."]
-visible = false
-scale = Vector2(0.5, 0.5)
-color = Color(1, 1, 0.92549, 1)
-energy = 0.25
-shadow_enabled = true
-shadow_filter = 1
-texture = ExtResource("3_e4p34")
 
 [node name="InteractionArea" type="Area2D" parent="."]
 collision_layer = 2

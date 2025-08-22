@@ -1,63 +1,91 @@
 class_name Player
 extends CharacterBody2D
-
-@export var move_speed:float = 5000.0
+signal stamina_changed
+@export var move_speed:float = 500.0
 @export var items:Inventory
 
-@export var max_speed: float = 8000.0
-@export var acceleration: float = 3000.0
-@export var deceleration: float = 5000.0
+@export var max_speed: float = 1200.0
+@export var acceleration: float = 50.0
+@export var deceleration: float = 500.0
+@export var bounce_force: float = 200.0
 
 # Physics parameters
 @export var player_mass: float = 70.0  # Player's mass in kg
 @export var push_force_multiplier: float = 8.0  # Base force multiplier for pushing
 @export var knockback_threshold: float = 50.0  # Minimum relative velocity for knockback
 @export var physics_material_override:PhysicsMaterial
-
+const KNOCKBACK_SCALE = 0.05
 
 @onready var audio_player:AudioStreamPlayer = $AudioStreamPlayer
-var move_target:Vector2
+
+var stamina_max = 1.0
+
+var stamina:float = 1.0:
+	set = set_stamina
+
+var input_dir:Vector2
 var facing:Vector2 = Vector2.RIGHT
 var moving = false
+var stunned = false
+var velocity_before_collision: Vector2
 
 func _ready():
 	add_to_group("player")
+	stamina_changed.emit(stamina)
+
+func set_stamina(value:float):
+	stamina=max(0.0,value)
+	stamina_changed.emit(value)
 
 func play_sound(sound:AudioStream, bus:StringName=&"Effects"):
 	audio_player.bus=bus
 	audio_player.stream=sound
 	audio_player.play()
 
-func _physics_process(delta):
-	if Input.is_action_pressed(&"sprint"):
-		var target_velocity = global_position.direction_to(move_target) * max_speed
-		velocity = velocity.move_toward(target_velocity, acceleration * delta)
+func restore_stamina(value:float=0.1, percent=true):
+	if percent:
+		stamina += (stamina_max * value)
+		return
+	set_stamina(stamina+value)
+
+func _physics_process(_delta):
+	if Input.is_action_pressed(&"sprint") and input_dir:
+		var target_velocity = input_dir * max_speed
+		velocity = velocity.move_toward(target_velocity, acceleration)
 	elif moving:
 		var speed = move_speed
-		velocity = global_position.direction_to(move_target) * speed * delta
+		velocity = input_dir * speed
+	elif stunned:
+		velocity = velocity.move_toward(Vector2.ZERO, deceleration * stamina)
 	else:
-		velocity = velocity.move_toward(Vector2.ZERO, deceleration * delta)
+		velocity = velocity.move_toward(Vector2.ZERO, deceleration)
+	velocity_before_collision = velocity
 	move_and_slide()
 	handle_wall_bouncing()
+	handle_rigidbody_interactions()
+	
 
 
 func _process(_delta):
 	movement()
 
+func stun(time:float=0.2):
+	moving=false
+	stunned = true
+	set_process(false)
+	await get_tree().create_timer(time).timeout
+	stunned = false
+	set_process(true)
 
 func movement():
-	var input_dir:Vector2 = Input.get_vector(&"move_left", &"move_right", &"move_up", &"move_down")
+	input_dir = Input.get_vector(&"move_left", &"move_right", &"move_up", &"move_down")
 	if input_dir.is_zero_approx(): # early exit
 		moving = false
 		return
-	var angle = input_dir.angle() / (PI/2)
+	var angle = input_dir.angle() / (PI/3)
 	angle = wrapi(int(angle), 0, 4)
 	$AnimationPlayer.play("look_"+str(angle))
-	move_target = global_position + (input_dir * Vector2(Global.TILE_SIZE))
 	moving = true
-
-	handle_rigidbody_interactions()
-	handle_wall_bouncing()
 
 func handle_rigidbody_interactions():
 	for i in get_slide_collision_count():
@@ -125,7 +153,7 @@ func handle_rigidbody_interactions():
 				
 				# Apply knockback impulse
 				var knockback_impulse = collision_normal * momentum_transfer * (1.0 + total_bounce)
-				velocity += knockback_impulse * 0.01  # Scale down for gameplay feel
+				velocity += knockback_impulse * KNOCKBACK_SCALE  # Scale down for gameplay feel
 
 func handle_wall_bouncing():
 	# Check if we collided with something that's NOT a RigidBody2D
@@ -141,10 +169,20 @@ func handle_wall_bouncing():
 				# Check for physics material on static bodies
 				var bounce_coefficient = 0.6  # Default bounce
 				if collider.has_method("get_physics_material_override"):
-					var p_material = collider.get_physics_material_override()
-					if p_material:
-						bounce_coefficient = p_material.bounce
+					var material = collider.get_physics_material_override()
+					if material:
+						bounce_coefficient = material.bounce
 				
-				# Calculate bounce velocity using physics material
-				var bounce_velocity = velocity.bounce(collision_normal)
+				# Use the velocity before collision for bounce calculation
+				var pre_collision_velocity = velocity_before_collision
+				
+				# Calculate bounce velocity using the pre-collision velocity
+				var bounce_velocity = pre_collision_velocity.bounce(collision_normal)
 				velocity = bounce_velocity * bounce_coefficient
+				
+				# Apply minimum bounce force if velocity is too low but we had significant speed
+				if velocity.length() < bounce_force and pre_collision_velocity.length() > move_speed:
+					var bounce_direction = pre_collision_velocity.bounce(collision_normal).normalized()
+					velocity = bounce_direction * bounce_force * bounce_coefficient
+				#if velocity.length() > knockback_threshold*2:
+				#	stun(0.2)

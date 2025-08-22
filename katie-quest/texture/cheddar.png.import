@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfjos5s36fceh"
-path="res://.godot/imported/katten.png-6b9e40be1f6c7b792606944d01d16524.ctex"
+uid="uid://ckavfopvfslkv"
+path="res://.godot/imported/cheddar.png-e8d60ea536ebf02685fb86d3c83572a1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://texture/katten.png"
-dest_files=["res://.godot/imported/katten.png-6b9e40be1f6c7b792606944d01d16524.ctex"]
+source_file="res://texture/cheddar.png"
+dest_files=["res://.godot/imported/cheddar.png-e8d60ea536ebf02685fb86d3c83572a1.ctex"]
 
 [params]
 

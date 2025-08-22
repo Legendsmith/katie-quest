@@ -159,6 +159,8 @@ camera_zoom_reset={
 2d_physics/layer_1="Main"
 2d_physics/layer_2="Interaction"
 2d_physics/layer_3="Obstacle"
+2d_physics/layer_4="Player"
+2d_physics/layer_5="Enemy"
 
 [physics]
 

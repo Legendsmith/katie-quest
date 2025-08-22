@@ -1,0 +1,237 @@
+[gd_scene load_steps=16 format=3 uid="uid://di7i0silkasye"]
+
+[ext_resource type="Texture2D" uid="uid://bsvcsouqyrnx7" path="res://texture/enemy_sprites.png" id="1_pqhw6"]
+[ext_resource type="Script" uid="uid://d0cbako53r5p0" path="res://entities/enemy.gd" id="1_uvc0s"]
+[ext_resource type="Texture2D" uid="uid://dd306yc5olmbt" path="res://texture/glowing_circle.png" id="3_b4nis"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_c8u6y"]
+friction = 0.8
+bounce = 0.2
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uvc0s"]
+radius = 24.0
+
+[sub_resource type="Curve" id="Curve_b4nis"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_uvc0s"]
+curve = SubResource("Curve_b4nis")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_x8e4v"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_max = 2.0
+damping_min = 1.0
+damping_max = 1.0
+scale_curve = SubResource("CurveTexture_uvc0s")
+color = Color(0, 0, 0, 1)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uvc0s"]
+lifetime_randomness = 0.25
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 105.94
+initial_velocity_max = 147.28
+color = Color(1, 0, 0, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x8e4v"]
+radius = 42.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b4nis"]
+radius = 180.0
+
+[sub_resource type="Animation" id="Animation_rrp0o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AttackLight:enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AttackParticles2D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.517184, 0.517184, 0.517184, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jq0pf"]
+resource_name = "attack"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 0, 1, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AttackLight:enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AttackParticles2D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:self_modulate")
+tracks/3/interp = 0
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 0.784314, 0.784314, 1), Color(0.517184, 0.517184, 0.517184, 1), Color(1, 0.784314, 0.784314, 1), Color(0.517184, 0.517184, 0.517184, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_x8e4v"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jq0pf"]
+_data = {
+&"RESET": SubResource("Animation_rrp0o"),
+&"attack": SubResource("Animation_jq0pf"),
+&"idle": SubResource("Animation_x8e4v")
+}
+
+[node name="Enemy" type="RigidBody2D"]
+collision_layer = 17
+collision_mask = 9
+mass = 10.0
+physics_material_override = SubResource("PhysicsMaterial_c8u6y")
+gravity_scale = 0.0
+lock_rotation = true
+linear_damp_mode = 1
+script = ExtResource("1_uvc0s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_uvc0s")
+
+[node name="AttackLight" type="PointLight2D" parent="."]
+enabled = false
+color = Color(0.999985, 0.870254, 0.848221, 1)
+energy = 0.75
+shadow_enabled = true
+shadow_color = Color(0.275159, 0, 0, 0)
+texture = ExtResource("3_b4nis")
+texture_scale = 5.0
+
+[node name="TrailParticles2D" type="GPUParticles2D" parent="."]
+amount = 4
+texture = ExtResource("3_b4nis")
+lifetime = 5.0
+process_material = SubResource("ParticleProcessMaterial_x8e4v")
+
+[node name="AttackParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 512
+lifetime = 0.4
+one_shot = true
+explosiveness = 0.5
+randomness = 0.5
+process_material = SubResource("ParticleProcessMaterial_uvc0s")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0.517184, 0.517184, 0.517184, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_pqhw6")
+hframes = 2
+
+[node name="AttackArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+shape = SubResource("CircleShape2D_x8e4v")
+
+[node name="ChaseArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChaseArea"]
+shape = SubResource("CircleShape2D_b4nis")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_jq0pf")
+}
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_postprocessing = 1
+avoidance_enabled = true
+radius = 24.0
