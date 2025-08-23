@@ -18,3 +18,4 @@ script = ExtResource("1_ku76i")
 shape = SubResource("RectangleShape2D_0liwy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 0

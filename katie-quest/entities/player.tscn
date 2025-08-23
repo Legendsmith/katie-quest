@@ -173,6 +173,7 @@ items = SubResource("Resource_qsoyl")
 current = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 0
 position = Vector2(0, -29)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_qly61")
