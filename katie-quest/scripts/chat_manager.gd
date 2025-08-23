@@ -4,11 +4,13 @@ const BASE_COOLDOWN:float = 3.5
 var cooldown_timer:Timer
 var is_cooldown:bool = false
 func _ready():
-	Global.speech_manager = self
+	Global.chat_manager = self
 	VerySimpleTwitch.chat_message_received.connect(on_chat)
 	cooldown_timer = Timer.new()
 	cooldown_timer.one_shot=true
 	cooldown_timer.wait_time=BASE_COOLDOWN
+	cooldown_timer.timeout.connect(on_cooldown_finished)
+	add_child(cooldown_timer)
 
 
 func on_chat(chatter: VSTChatter):
@@ -23,7 +25,7 @@ func on_chat(chatter: VSTChatter):
 	var selected_katten:CharacterBody2D = kattens.pick_random()
 	selected_katten.chat_talk(chatter)
 	 # The more kattens there are the lower the cooldown becomes
-	cooldown_timer= BASE_COOLDOWN * max(0,pow(0.75,float(katten_count-1)))
+	cooldown_timer.wait_time = BASE_COOLDOWN * max(0,pow(0.75,float(katten_count-1)))
 	is_cooldown = true
 	cooldown_timer.start()
 

@@ -7,23 +7,39 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jn0vn"]
 bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+anti_aliasing = false
 
 [node name="SpeechBubble" type="Node2D"]
+light_mask = 2
+visibility_layer = 2
 script = ExtResource("1_ej4bd")
 
 [node name="Anchor" type="Node2D" parent="."]
 position = Vector2(-19, 0)
 
-[node name="MarginContainer" type="MarginContainer" parent="Anchor"]
+[node name="Container" type="PanelContainer" parent="Anchor"]
+visibility_layer = 2
 offset_right = 40.0
 offset_bottom = 14.0
 size_flags_horizontal = 0
-
-[node name="TextBackground" type="Panel" parent="Anchor/MarginContainer"]
-layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_jn0vn")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Anchor/MarginContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Anchor/Container"]
+light_mask = 2
+clip_contents = false
 layout_mode = 2
 mouse_filter = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -33,6 +49,5 @@ theme_override_fonts/bold_font = ExtResource("4_q4l5j")
 theme_override_font_sizes/normal_font_size = 14
 scroll_active = false
 autowrap_mode = 0
-tab_size = 2
 
 [node name="Timer" type="Timer" parent="."]

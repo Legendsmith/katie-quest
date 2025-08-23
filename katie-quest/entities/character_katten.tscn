@@ -10,9 +10,8 @@ radius = 12.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_csk71"]
 radius = 120.0
 
-[sub_resource type="Animation" id="Animation_csk71"]
-resource_name = "idle"
-length = 0.2
+[sub_resource type="Animation" id="Animation_4jcl1"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -38,8 +37,9 @@ tracks/1/keys = {
 "values": [false]
 }
 
-[sub_resource type="Animation" id="Animation_4jcl1"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_csk71"]
+resource_name = "idle"
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -193,8 +193,9 @@ target_desired_distance = 120.0
 path_max_distance = 64.0
 path_postprocessing = 1
 avoidance_enabled = true
-radius = 14.0
+radius = 42.0
 neighbor_distance = 300.0
+max_speed = 200.0
 debug_enabled = true
 
 [node name="SpeechBubble" parent="." instance=ExtResource("3_xdabd")]

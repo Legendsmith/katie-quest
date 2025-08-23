@@ -1,22 +1,20 @@
 extends Node2D
 
-@onready var text_node:RichTextLabel = $Anchor/MarginContainer/RichTextLabel
-@onready var margin:MarginContainer = $Anchor/MarginContainer
-@onready var text_bg:Panel = $Anchor/MarginContainer/TextBackground
+@onready var text_node:RichTextLabel = $Anchor/Container/RichTextLabel
+@onready var container:Container = $Anchor/Container
 @onready var anchor:Node2D = $Anchor
 
-const char_time = 0.02
-const margin_offset = 8
+const char_time:float = 0.02
+const margin_offset:int = 4
 
 func _ready() -> void:
 	visible = false
+	$Timer.timeout.connect(_on_Timer_timeout)
 
-func set_text(text, wait_time = 2.5):
+func set_text(text:String, wait_time = 2.5):
 	visible = true
-
-	$Timer.wait_time = wait_time
 	$Timer.stop()
-
+	text = text.trim_suffix(" ")
 	text_node.bbcode_text = text
 
 	# Duration
@@ -24,13 +22,18 @@ func set_text(text, wait_time = 2.5):
 	anchor.position = Vector2.ZERO
 	# Set the size of the speech bubble
 	var text_size = text_node.get_theme_font("normal_font").get_string_size(text_node.text)
-	margin.add_theme_constant_override(&"margin_right", margin_offset)
-
+	container.add_theme_constant_override(&"margin_right", margin_offset)
+	$Timer.wait_time = wait_time * (text_size.x * 0.15)
 	var tween:Tween = get_tree().create_tween()
+	tween.stop()
 	# Animation
-	tween.tween_property(text_node, ^"visible_ratio", 1, duration)
-	tween.tween_property(margin, ^"size:x", int(text_size.x), duration)
-	tween.tween_property(anchor, ^"position", Vector2(-(text_size.x)/2,0), duration/2)
+	text_node.visible_ratio=0.0
+	container.size.x=0.0
+	anchor.position.x=0.0
+	tween.parallel().tween_property(text_node, ^"visible_ratio", 1, duration)
+	tween.parallel().tween_property(container, ^"size:x", int(text_size.x+margin_offset), duration)
+	tween.parallel().tween_property(anchor, ^"position", Vector2(-(text_size.x+margin_offset)/2,0), duration)
+	tween.play()
 	tween.finished.connect($Timer.start)
 
 func _on_Timer_timeout() -> void:

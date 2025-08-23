@@ -35,8 +35,10 @@ func attack(body):
 	player.stun()
 	player.velocity = vec
 	player.stamina *=0.9
-	unchase(body)
-	drift()
+	await get_tree().create_timer(0.5).timeout
+	if not chase_area.has_overlapping_bodies():
+		unchase(body)
+		drift()
 
 
 

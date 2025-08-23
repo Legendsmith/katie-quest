@@ -38,6 +38,8 @@ layout_mode = 2
 offset_top = 475.0
 offset_right = 1152.0
 offset_bottom = 627.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_bottom = 2
 

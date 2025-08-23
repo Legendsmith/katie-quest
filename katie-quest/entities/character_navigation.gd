@@ -15,7 +15,8 @@ func _ready():
 	
 func chat_talk(chatter: VSTChatter):
 	speech_bubble.set_text(chatter.message)
-	stamina_restore_area.get_overlapping_bodies()[0].restore_stamina()
+	if stamina_restore_area.has_overlapping_bodies():
+		stamina_restore_area.get_overlapping_bodies()[0].restore_stamina()
 
 func _exit_tree() -> void:
 	remove_from_group("kattens")
