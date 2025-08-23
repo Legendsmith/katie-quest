@@ -29,49 +29,94 @@ theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 21
 
-[node name="GridContainer" type="GridContainer" parent="TabContainer/Sound/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Sound/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 21
+
+[node name="Sliders" type="GridContainer" parent="TabContainer/Sound/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_constants/h_separation = 12
 theme_override_constants/v_separation = 12
 columns = 2
 
-[node name="LabelMaster" type="Label" parent="TabContainer/Sound/MarginContainer/GridContainer"]
+[node name="LabelMaster" type="Label" parent="TabContainer/Sound/MarginContainer/VBoxContainer/Sliders"]
 layout_mode = 2
 text = "Master"
 
-[node name="SliderMaster" type="HSlider" parent="TabContainer/Sound/MarginContainer/GridContainer"]
+[node name="SliderMaster" type="HSlider" parent="TabContainer/Sound/MarginContainer/VBoxContainer/Sliders"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 value = 100.0
 
-[node name="LabelMusic" type="Label" parent="TabContainer/Sound/MarginContainer/GridContainer"]
+[node name="LabelMusic" type="Label" parent="TabContainer/Sound/MarginContainer/VBoxContainer/Sliders"]
 layout_mode = 2
 text = "Music"
 
-[node name="SliderMusic" type="HSlider" parent="TabContainer/Sound/MarginContainer/GridContainer"]
+[node name="SliderMusic" type="HSlider" parent="TabContainer/Sound/MarginContainer/VBoxContainer/Sliders"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 value = 50.0
 
-[node name="LabelEffects" type="Label" parent="TabContainer/Sound/MarginContainer/GridContainer"]
+[node name="LabelEffects" type="Label" parent="TabContainer/Sound/MarginContainer/VBoxContainer/Sliders"]
 layout_mode = 2
 text = "Effects"
 
-[node name="SliderEffects" type="HSlider" parent="TabContainer/Sound/MarginContainer/GridContainer"]
+[node name="SliderEffects" type="HSlider" parent="TabContainer/Sound/MarginContainer/VBoxContainer/Sliders"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 value = 50.0
 
-[node name="LabelVoices" type="Label" parent="TabContainer/Sound/MarginContainer/GridContainer"]
+[node name="LabelVoices" type="Label" parent="TabContainer/Sound/MarginContainer/VBoxContainer/Sliders"]
 layout_mode = 2
 text = "Voices"
 
-[node name="SliderVoices" type="HSlider" parent="TabContainer/Sound/MarginContainer/GridContainer"]
+[node name="SliderVoices" type="HSlider" parent="TabContainer/Sound/MarginContainer/VBoxContainer/Sliders"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 value = 50.0
+
+[node name="Microphone" type="VBoxContainer" parent="TabContainer/Sound/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 10.0
+theme_override_constants/separation = 20
+
+[node name="MicSelector" type="HBoxContainer" parent="TabContainer/Sound/MarginContainer/VBoxContainer/Microphone"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="TabContainer/Sound/MarginContainer/VBoxContainer/Microphone/MicSelector"]
+layout_mode = 2
+text = "Mic Selector"
+
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Sound/MarginContainer/VBoxContainer/Microphone/MicSelector"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="TabContainer/Sound/MarginContainer/VBoxContainer/Microphone"]
+layout_mode = 2
+text = "Test Mic"
+
+[node name="MicLevel" type="VBoxContainer" parent="TabContainer/Sound/MarginContainer/VBoxContainer/Microphone"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Sound/MarginContainer/VBoxContainer/Microphone/MicLevel"]
+layout_mode = 2
+text = "Mic Level"
+
+[node name="ProgressBar" type="ProgressBar" parent="TabContainer/Sound/MarginContainer/VBoxContainer/Microphone/MicLevel"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="HSlider" type="HSlider" parent="TabContainer/Sound/MarginContainer/VBoxContainer/Microphone/MicLevel"]
+layout_mode = 2
+max_value = 200.0
+value = 100.0
+
+[node name="BackToMenu" type="Button" parent="TabContainer/Sound/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Back to Main Menu"
