@@ -18,10 +18,16 @@ func _ready():
 	setup_microphone()
 
 func setup_microphone():
+	var selected_device = GameSettings.get_microphone_device()
+	if selected_device != "":
+		AudioServer.set_input_device(selected_device)
+
+	var mic_bus_index = AudioServer.get_bus_index("Microphone")
 	audio_effect_capture = AudioEffectCapture.new()
-	AudioServer.add_bus_effect(0, audio_effect_capture)
+	AudioServer.add_bus_effect(mic_bus_index, audio_effect_capture)
 
 	audio_input = AudioStreamPlayer.new()
+	audio_input.bus = "Microphone"
 	add_child(audio_input)
 
 	var mic_stream = AudioStreamMicrophone.new()
@@ -57,6 +63,8 @@ func process_audio_data(data: PackedVector2Array):
 	for v in volume_history:
 		avg_volume += v
 	avg_volume = avg_volume / volume_history.size()
+	
+	avg_volume *= GameSettings.get_microphone_gain()
 	
 	var current_time = Time.get_ticks_msec() / 1000.0
 	

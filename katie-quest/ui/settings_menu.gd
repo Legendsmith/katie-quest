@@ -73,6 +73,17 @@ func populate_microphones():
 	for device in devices:
 		ui_mic_selector.add_item(device)
 
+	var saved_device = GameSettings.get_microphone_device()
+	if saved_device != "":
+		for i in range(ui_mic_selector.get_item_count()):
+			if ui_mic_selector.get_item_text(i) == saved_device:
+				ui_mic_selector.selected = i
+				break
+
+	var saved_gain = GameSettings.get_microphone_gain()
+	mic_gain = saved_gain
+	ui_mic_gain.value = saved_gain * 100 
+
 func _on_mic_test_pressed():
 	is_testing = !is_testing
 
@@ -80,6 +91,8 @@ func _on_mic_test_pressed():
 		if ui_mic_selector.selected >= 0:
 			var selected_device = ui_mic_selector.get_item_text(ui_mic_selector.selected)
 			AudioServer.set_input_device(selected_device)
+
+			GameSettings.set_microphone_settings(selected_device, mic_gain)
 
 		var mic_bus_index = AudioServer.get_bus_index("Microphone")
 		AudioServer.set_bus_mute(mic_bus_index, true)
@@ -94,7 +107,7 @@ func _on_mic_test_pressed():
 		audio_player.stop()
 		ui_mic_test.text = "Test Microphone"
 
-func _process(delta):
+func _process(_delta):
 	if is_testing and audio_player.playing:
 		var frames = capture_effect.get_frames_available()
 
@@ -111,6 +124,11 @@ func _process(delta):
 
 func _on_mic_gain_changed(value: float):
 	mic_gain = value / 100.0
+
+	var current_device = ""
+	if ui_mic_selector.selected >= 0:
+		current_device = ui_mic_selector.get_item_text(ui_mic_selector.selected)
+	GameSettings.set_microphone_settings(current_device, mic_gain)
 
 func _on_back_to_menu_pressed():
 	if is_testing:
