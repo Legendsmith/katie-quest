@@ -156,6 +156,13 @@ camera_zoom_reset={
 
 [layer_names]
 
+2d_render/layer_1="global_default"
+2d_render/layer_2="background_lit"
+2d_render/layer_3="background_occluders"
+2d_render/layer_4="block_lit"
+2d_render/layer_5="block_occluder"
+2d_render/layer_6="entity_lit"
+2d_render/layer_7="entity_occluder"
 2d_physics/layer_1="Main"
 2d_physics/layer_2="Interaction"
 2d_physics/layer_3="Obstacle"
