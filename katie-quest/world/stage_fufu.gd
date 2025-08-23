@@ -24,12 +24,15 @@ func reset_player(player_node:Player):
 	player_node.global_position = start_position.global_position
 	player_node.reset_physics_interpolation()
 
-
+# When emotes work, re-enable this functionality in order to
+# make them appear as 'asteroids' being sucked into the black hole
 func process_emotes(chatter:VSTChatter):
-	var words:Array[String] = chatter.message.split(" ",false)
-	#for word in words:
-	#	if word in :
-	#		emote_array.append(VerySimpleTwitch.get_emote(word))
+	pass
+#	var words:Array[String] = chatter.message.split(" ",false)
+#	for word in words:
+#		if word in <wherever the list of emotes is>:
+#			emote_array.append(VerySimpleTwitch.get_emote(word))
+
 
 
 func spawn_emote(texture:Texture2D=null):
