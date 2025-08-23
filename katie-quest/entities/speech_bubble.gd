@@ -29,10 +29,9 @@ func set_text(text:String, wait_time = 2.5):
 	# Animation
 	text_node.visible_ratio=0.0
 	container.size.x=0.0
-	anchor.position.x=0.0
-	tween.parallel().tween_property(text_node, ^"visible_ratio", 1, duration)
-	tween.parallel().tween_property(container, ^"size:x", int(text_size.x+margin_offset), duration)
-	tween.parallel().tween_property(anchor, ^"position", Vector2(-(text_size.x+margin_offset)/2,0), duration)
+	tween.parallel().tween_property(text_node, ^"visible_ratio", 1, duration).from(0.0)
+	tween.parallel().tween_property(container, ^"size:x", int(text_size.x+margin_offset), duration).from(0.0)
+	tween.parallel().tween_property(anchor, ^"position:x",-(text_size.x+margin_offset)/2, duration).from(0.0)
 	tween.play()
 	tween.finished.connect($Timer.start)
 

@@ -177,8 +177,7 @@ locked = true
 position = Vector2(24, 152)
 
 [node name="EditorLight" type="DirectionalLight2D" parent="."]
-light_mask = 2
-visibility_layer = 2
+visibility_layer = 1
 position = Vector2(-176, -208)
 energy = 0.05
 range_item_cull_mask = 0
@@ -202,8 +201,7 @@ position = Vector2(1266, 377)
 target = NodePath("../Player")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-light_mask = 2
-visibility_layer = 2
+visibility_layer = 1
 range_layer_min = 1
 range_layer_max = 2
 range_item_cull_mask = 0

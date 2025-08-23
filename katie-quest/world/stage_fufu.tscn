@@ -37,7 +37,6 @@ gravity = 98.0
 shape = SubResource("CircleShape2D_c5xax")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-light_mask = 2
 amount = 200
 lifetime = 20.0
 preprocess = 2.0
@@ -53,7 +52,6 @@ position = Vector2(-184, 136)
 script = ExtResource("3_poacd")
 
 [node name="ColorRect" type="ColorRect" parent="Camera2D"]
-visible = false
 z_index = -5
 z_as_relative = false
 offset_left = -576.0
@@ -64,5 +62,5 @@ color = Color(0, 0, 0, 1)
 
 [node name="AreaBlackHole" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBlackHole"]
 shape = SubResource("CircleShape2D_poacd")

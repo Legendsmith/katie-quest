@@ -205,6 +205,7 @@ randomness = 0.5
 process_material = SubResource("ParticleProcessMaterial_uvc0s")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 0
 self_modulate = Color(0.517184, 0.517184, 0.517184, 1)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_pqhw6")
