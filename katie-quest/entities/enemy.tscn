@@ -12,7 +12,7 @@ bounce = 0.2
 radius = 24.0
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_b4nis"]
-polygon = PackedVector2Array(-21, 0, -13, -17, 15, -17, 20, -1, 13, 13, 10, 22, -9, 22, -12, 12)
+polygon = PackedVector2Array(-13, 0, -8, -7, 0, -8, 8, -6, 13, 0, 8, 6, 0, 10, -9, 6)
 
 [sub_resource type="Curve" id="Curve_b4nis"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -215,6 +215,7 @@ process_material = SubResource("ParticleProcessMaterial_uvc0s")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 self_modulate = Color(0.517184, 0.517184, 0.517184, 1)
 light_mask = 32
+position = Vector2(0, -28)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_pqhw6")
 hframes = 2
