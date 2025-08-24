@@ -1,1 +1,30 @@
+Legendsmith @legendsmithAU
+- Game Concept
+- Game Design
+- Lead Programmer
+- Sprites and Art
+Melkor N'wah melkornwah
+- Twitch API integration
+- Audio System: Melkor N'wah
+- UI Programming: Melkor N'wah
+Eletheos @eletheos
+- Sprite Cleanup
+Rozen @rozendraws
+- Buffpup sprites
+- Zentreya sprites
+(if done)
+- additional enemy concepts
+EnderECM
+- Dialog
+Amethestra
+- Programming
+- Mod Sprites
+- specialist consulting
+
+Special Thanks:
+Beardbarian
+Krulnir
+All of Katie's mods for making this possible.
+
+Asset Credits:
 inventory sound effects: artistic dude https://opengameart.org/content/inventory-sound-effects
