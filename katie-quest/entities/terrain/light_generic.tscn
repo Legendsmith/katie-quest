@@ -12,3 +12,11 @@ texture = ExtResource("1_ws78b")
 script = ExtResource("1_gcn2e")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+light_mask = 0
+range_item_cull_mask = 24
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 0.392157)
+shadow_item_cull_mask = 72
+texture = ExtResource("1_ws78b")

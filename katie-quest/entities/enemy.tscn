@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://di7i0silkasye"]
+[gd_scene load_steps=17 format=3 uid="uid://di7i0silkasye"]
 
 [ext_resource type="Texture2D" uid="uid://bsvcsouqyrnx7" path="res://texture/enemy_sprites.png" id="1_pqhw6"]
 [ext_resource type="Script" uid="uid://d0cbako53r5p0" path="res://entities/enemy.gd" id="1_uvc0s"]
@@ -10,6 +10,9 @@ bounce = 0.2
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uvc0s"]
 radius = 24.0
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_b4nis"]
+polygon = PackedVector2Array(-21, 0, -13, -17, 15, -17, 20, -1, 13, 13, 10, 22, -9, 22, -12, 12)
 
 [sub_resource type="Curve" id="Curve_b4nis"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -183,11 +186,16 @@ shape = SubResource("CircleShape2D_uvc0s")
 [node name="AttackLight" type="PointLight2D" parent="."]
 enabled = false
 color = Color(0.999985, 0.870254, 0.848221, 1)
-energy = 0.75
+range_item_cull_mask = 42
 shadow_enabled = true
 shadow_color = Color(0.275159, 0, 0, 0)
+shadow_item_cull_mask = 20
 texture = ExtResource("3_b4nis")
 texture_scale = 5.0
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_b4nis")
+occluder_light_mask = 64
 
 [node name="TrailParticles2D" type="GPUParticles2D" parent="."]
 amount = 4
@@ -205,8 +213,8 @@ randomness = 0.5
 process_material = SubResource("ParticleProcessMaterial_uvc0s")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-light_mask = 0
 self_modulate = Color(0.517184, 0.517184, 0.517184, 1)
+light_mask = 32
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_pqhw6")
 hframes = 2

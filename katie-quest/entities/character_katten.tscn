@@ -1,8 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://dib68lw4dmqcn"]
+[gd_scene load_steps=14 format=3 uid="uid://dib68lw4dmqcn"]
 
 [ext_resource type="Script" uid="uid://ylfhctqygnjg" path="res://entities/character_navigation.gd" id="1_7tc5j"]
 [ext_resource type="Texture2D" uid="uid://ckavfopvfslkv" path="res://texture/cheddar.png" id="2_xdabd"]
 [ext_resource type="PackedScene" uid="uid://cqucqcdojjcsw" path="res://entities/speech_bubble.tscn" id="3_xdabd"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xdabd"]
+polygon = PackedVector2Array(-8, 0, 8, 0, 8, -8, -8, -8)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xdabd"]
 radius = 12.0
@@ -174,12 +177,16 @@ _data = {
 [node name="CharacterKatten" type="CharacterBody2D"]
 script = ExtResource("1_7tc5j")
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_xdabd")
+occluder_light_mask = 64
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_xdabd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-light_mask = 0
+light_mask = 32
 position = Vector2(0, -25)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_xdabd")

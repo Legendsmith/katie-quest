@@ -8,10 +8,11 @@
 script = ExtResource("1_rveyu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = ExtResource("1_7htmd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-light_mask = 0
+light_mask = 2
 texture = ExtResource("3_rveyu")
 region_enabled = true
 region_rect = Rect2(644, 196, 64, 64)

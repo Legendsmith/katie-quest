@@ -29,14 +29,12 @@ script = ExtResource("1_ej4bd")
 position = Vector2(-19, 0)
 
 [node name="Container" type="PanelContainer" parent="Anchor"]
-light_mask = 0
 offset_right = 40.0
 offset_bottom = 14.0
 size_flags_horizontal = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_jn0vn")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Anchor/Container"]
-light_mask = 0
 clip_contents = false
 layout_mode = 2
 mouse_filter = 2

@@ -404,7 +404,7 @@ monitorable = false
 script = ExtResource("1_i7dw7")
 
 [node name="SpriteDoor" type="Sprite2D" parent="."]
-light_mask = 8
+light_mask = 2
 texture = ExtResource("2_lawn3")
 vframes = 2
 frame = 1
@@ -413,12 +413,12 @@ region_rect = Rect2(772, 4, 128, 256)
 
 [node name="SpriteBolt" type="Sprite2D" parent="."]
 visible = false
-light_mask = 8
+light_mask = 2
 texture = SubResource("AtlasTexture_rrf83")
 
 [node name="SpriteLock" type="Sprite2D" parent="."]
 visible = false
-light_mask = 0
+light_mask = 2
 texture = SubResource("AtlasTexture_vrqlg")
 
 [node name="DoorEnterShape" type="CollisionShape2D" parent="."]

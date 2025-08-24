@@ -1,5 +1,6 @@
 extends CharacterPhysics
 @export var attack_force:float = 1000.0
+@export var stamina_damage = 0.1
 @export var drift_force:float = 150.0
 @onready var attack_area:Area2D = $AttackArea
 @onready var chase_area:Area2D = $ChaseArea
@@ -32,9 +33,9 @@ func attack(body):
 	player.set_physics_process(false)
 	await get_tree().create_timer(0.3).timeout
 	player.set_physics_process(true)
-	player.stun()
+	player.stamina = max(0.05, player.stamina -stamina_damage)
+	player.stun(0.2/player.stamina)
 	player.velocity = vec
-	player.stamina *=0.9
 	await get_tree().create_timer(0.5).timeout
 	if not chase_area.has_overlapping_bodies():
 		unchase(body)
