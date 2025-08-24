@@ -26,6 +26,7 @@ Global="*res://autoload/global.gd"
 VerySimpleTwitch="*res://addons/very-simple-twitch/twitch_node.gd"
 Fade="*res://scenes/fade.tscn"
 DataManager="*res://data/DataManager.gd"
+Cursor="*res://scripts/cursor.gd"
 
 [dialogic]
 
@@ -61,6 +62,11 @@ choices/reveal_by_input=false
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 
 [dotnet]
 
