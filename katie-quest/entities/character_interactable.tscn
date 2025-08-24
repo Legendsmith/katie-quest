@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c345ttforl3od"]
+[gd_scene load_steps=7 format=3 uid="uid://c345ttforl3od"]
 
 [ext_resource type="Script" uid="uid://cw44penxbmyf1" path="res://entities/character_interactable.gd" id="1_vimof"]
 [ext_resource type="Texture2D" uid="uid://yn7f1whke1vf" path="res://texture/heavenly_front.png" id="3_i3om4"]
@@ -6,6 +6,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i3om4"]
 size = Vector2(44, 123)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_i3om4"]
+polygon = PackedVector2Array(-11, 0, 11, 0, 11, -9, 23, -13, 15, -53, 19, -92, 11, -102, 7, -114, 4, -118, -4, -118, -7, -114, -11, -101, -19, -92, -15, -52, -21, -11, -12, -9)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ex7v"]
 size = Vector2(64, 64)
@@ -20,6 +23,10 @@ view_label_default = "Someone"
 position = Vector2(0, -59.5)
 shape = SubResource("RectangleShape2D_i3om4")
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_i3om4")
+occluder_light_mask = 64
+
 [node name="Blocker" type="StaticBody2D" parent="."]
 collision_layer = 4
 collision_mask = 0
@@ -29,7 +36,7 @@ position = Vector2(0, -32)
 shape = SubResource("RectangleShape2D_7ex7v")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-light_mask = 0
+light_mask = 32
 position = Vector2(0, -60)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_i3om4")

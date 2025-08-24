@@ -1,10 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://0vmexx03pq5u"]
+[gd_scene load_steps=3 format=3 uid="uid://0vmexx03pq5u"]
 
 [ext_resource type="Script" uid="uid://de4wic6w8bk0m" path="res://entities/terrain/light.gd" id="1_gcn2e"]
+[ext_resource type="Texture2D" uid="uid://d0xklxs5qoy4c" path="res://texture/light/neutral_point_light.webp" id="1_ws78b"]
 
 [node name="LightGeneric" type="PointLight2D"]
 light_mask = 0
-range_item_cull_mask = 0
+range_item_cull_mask = 42
+shadow_enabled = true
+shadow_item_cull_mask = 86
+texture = ExtResource("1_ws78b")
 script = ExtResource("1_gcn2e")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

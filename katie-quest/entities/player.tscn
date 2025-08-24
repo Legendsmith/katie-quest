@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://fi1vweeb0dv7"]
+[gd_scene load_steps=15 format=3 uid="uid://fi1vweeb0dv7"]
 
 [ext_resource type="Script" uid="uid://bedvbk7efy6ut" path="res://entities/player.gd" id="1_e4p34"]
 [ext_resource type="Script" uid="uid://bf7a7hnbastkb" path="res://scripts/inventory.gd" id="2_qly61"]
@@ -8,6 +8,9 @@
 [sub_resource type="Resource" id="Resource_qsoyl"]
 script = ExtResource("2_qly61")
 metadata/_custom_type_script = "uid://bf7a7hnbastkb"
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_rfe5m"]
+polygon = PackedVector2Array(7, 0, 12, -32, 12, -51, 8, -77, 10, -91, -9, -91, -7, -77, -11, -52, -11, -32, -8, 0)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rfe5m"]
 radius = 30.0
@@ -172,9 +175,13 @@ items = SubResource("Resource_qsoyl")
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 current = true
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_rfe5m")
+occluder_light_mask = 64
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
-light_mask = 0
-position = Vector2(0, -29)
+light_mask = 32
+position = Vector2(0, -49)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_qly61")
 hframes = 3
