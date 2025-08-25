@@ -1,6 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://c8d5478l3c7sx"]
+[gd_scene load_steps=4 format=3 uid="uid://c8d5478l3c7sx"]
 
 [ext_resource type="Script" uid="uid://dhqknurn1l6dc" path="res://ui/settings_menu.gd" id="1_h6jc8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h6jc8"]
+bg_color = Color(0.327671, 0.327671, 0.327671, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xutny"]
+bg_color = Color(0, 0.784596, 0, 1)
 
 [node name="SettingsMenu" type="MarginContainer"]
 anchors_preset = 15
@@ -109,7 +115,8 @@ text = "Mic Level"
 
 [node name="ProgressBar" type="ProgressBar" parent="TabContainer/Sound/MarginContainer/VBoxContainer/Microphone/MicLevel"]
 layout_mode = 2
-size_flags_horizontal = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_h6jc8")
+theme_override_styles/fill = SubResource("StyleBoxFlat_xutny")
 
 [node name="HSlider" type="HSlider" parent="TabContainer/Sound/MarginContainer/VBoxContainer/Microphone/MicLevel"]
 layout_mode = 2

@@ -15,6 +15,10 @@ var volume_history = []
 var history_size = 10
 
 func _ready():
+	required_volume = GameSettings.get_scream_threshold()
+	if required_volume == 0.0:
+		required_volume = 0.00001
+
 	setup_microphone()
 
 func setup_microphone():
@@ -58,16 +62,16 @@ func process_audio_data(data: PackedVector2Array):
 
 	if volume_history.size() > history_size:
 		volume_history.pop_front()
-	
+
 	var avg_volume = 0.0
 	for v in volume_history:
 		avg_volume += v
 	avg_volume = avg_volume / volume_history.size()
-	
+
 	avg_volume *= GameSettings.get_microphone_gain()
-	
+
 	var current_time = Time.get_ticks_msec() / 1000.0
-	
+
 	if avg_volume >= required_volume:
 		if not is_voice_active:
 			is_voice_active = true

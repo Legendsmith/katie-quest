@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://biou4bipueeff"]
+
+[ext_resource type="Script" uid="uid://ckfiqa2co0o77" path="res://ui/mic_calibration.gd" id="1_ivlwy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gv7p2"]
+bg_color = Color(0.207843, 0.207843, 0.207843, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ivlwy"]
+bg_color = Color(0.327671, 0.327671, 0.327671, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ijbdh"]
+bg_color = Color(0, 0.784596, 0, 1)
+
+[node name="MicCalibration" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gv7p2")
+script = ExtResource("1_ivlwy")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 21
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 21
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "When you are ready to calibrate your mic, press the button"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Start calibration"
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_ivlwy")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ijbdh")
+
+[node name="Next" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Next"

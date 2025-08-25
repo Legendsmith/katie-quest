@@ -24,15 +24,6 @@ var is_testing = false
 var mic_gain = 1.0
 
 func _ready():
-	ui_sound_master.connect("value_changed", func(value: float): _handle_audio_volume("Sound Master", value))
-	ui_sound_music.connect("value_changed", func(value: float): _handle_audio_volume("Music", value))
-	ui_sound_effects.connect("value_changed", func(value: float): _handle_audio_volume("Effects", value))
-	ui_sound_voices.connect("value_changed", func(value: float): _handle_audio_volume("Voices", value))
-
-	ui_mic_gain.connect("value_changed", _on_mic_gain_changed)
-
-	ui_back_to_menu.pressed.connect(_on_back_to_menu_pressed)
-
 	audio_stream_mic = AudioStreamMicrophone.new()
 	audio_player = AudioStreamPlayer.new()
 	audio_player.bus = "Microphone"
@@ -41,10 +32,28 @@ func _ready():
 	var mic_bus_index = AudioServer.get_bus_index("Microphone")
 	capture_effect = AudioEffectCapture.new()
 	AudioServer.add_bus_effect(mic_bus_index, capture_effect)
-	
+
 	ui_mic_level.min_value = 0
 	ui_mic_level.max_value = 100
 	ui_mic_level.value = 0
+
+	ui_sound_master.value = GameSettings.get_master_volume()
+	ui_sound_music.value = GameSettings.get_music_volume()
+	ui_sound_effects.value = GameSettings.get_effects_volume()
+	ui_sound_voices.value = GameSettings.get_voices_volume()
+
+	_handle_audio_volume("Sound Master", GameSettings.get_master_volume())
+	_handle_audio_volume("Music", GameSettings.get_music_volume())
+	_handle_audio_volume("Effects", GameSettings.get_effects_volume())
+	_handle_audio_volume("Voices", GameSettings.get_voices_volume())
+
+	ui_sound_master.connect("value_changed", func(value: float): _handle_audio_volume("Sound Master", value))
+	ui_sound_music.connect("value_changed", func(value: float): _handle_audio_volume("Music", value))
+	ui_sound_effects.connect("value_changed", func(value: float): _handle_audio_volume("Effects", value))
+	ui_sound_voices.connect("value_changed", func(value: float): _handle_audio_volume("Voices", value))
+
+	ui_mic_gain.connect("value_changed", _on_mic_gain_changed)
+	ui_back_to_menu.pressed.connect(_on_back_to_menu_pressed)
 
 	populate_microphones()
 
@@ -59,8 +68,9 @@ func _handle_audio_volume(bus_name: String, volume: float):
 		return
 
 	var db: float = lerp(-80, 0, clamp(volume / 100, 0, 1))
-
 	AudioServer.set_bus_volume_db(bus_index, db)
+	
+	GameSettings.set_audio_volume(bus_name, volume)
 
 func populate_microphones():
 	if ui_mic_selector == null:
