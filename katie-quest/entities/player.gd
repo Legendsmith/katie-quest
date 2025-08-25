@@ -8,6 +8,8 @@ signal stamina_changed
 @export var acceleration: float = 50.0
 @export var deceleration: float = 500.0
 @export var bounce_force: float = 200.0
+@export var stamina_sprint_cost = 0.0005
+@export var min_stamina:float = 0.01
 
 # Physics parameters
 @export var player_mass: float = 70.0  # Player's mass in kg
@@ -34,7 +36,7 @@ func _ready():
 	stamina_changed.emit(stamina)
 
 func set_stamina(value:float):
-	stamina=max(0.0,value)
+	stamina=max(min_stamina,value)
 	stamina_changed.emit(value)
 
 func play_sound(sound:AudioStream, bus:StringName=&"Effects"):
@@ -48,10 +50,11 @@ func restore_stamina(value:float=0.1, percent=true):
 		return
 	set_stamina(stamina+value)
 
-func _physics_process(_delta):
-	if Input.is_action_pressed(&"sprint") and input_dir:
+func _physics_process(_delta) -> void:
+	if Input.is_action_pressed(&"sprint") and input_dir and check_stamina():
 		var target_velocity = input_dir * max_speed
 		velocity = velocity.move_toward(target_velocity, acceleration)
+		stamina -= stamina_sprint_cost
 	elif moving:
 		var speed = move_speed
 		velocity = input_dir * speed
@@ -64,6 +67,11 @@ func _physics_process(_delta):
 	handle_wall_bouncing()
 	handle_rigidbody_interactions()
 	
+
+func check_stamina() -> bool:
+	if stamina > stamina_min
+		return true
+	return false
 
 
 func _process(_delta):
