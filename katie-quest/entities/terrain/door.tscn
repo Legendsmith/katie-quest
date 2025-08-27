@@ -409,7 +409,7 @@ texture = ExtResource("2_lawn3")
 vframes = 2
 frame = 1
 region_enabled = true
-region_rect = Rect2(772, 4, 128, 256)
+region_rect = Rect2(792, 4, 90, 256)
 
 [node name="SpriteBolt" type="Sprite2D" parent="."]
 visible = false
