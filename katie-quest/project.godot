@@ -23,10 +23,11 @@ driver/enable_input=true
 
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 Global="*res://autoload/global.gd"
-VerySimpleTwitch="*res://addons/very-simple-twitch/twitch_node.gd"
 Fade="*res://scenes/fade.tscn"
 DataManager="*res://data/DataManager.gd"
 Cursor="*res://scripts/cursor.gd"
+NeuroArkUVEditor="*res://addons/neuroark_general_uv_editor_manager/general_uv_editor_manager.gd"
+VerySimpleTwitch="*res://addons/very-simple-twitch/twitch_node.gd"
 
 [dialogic]
 
@@ -74,7 +75,7 @@ project/assembly_name="Katie Quest"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/gut/plugin.cfg", "res://addons/very-simple-twitch/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/gut/plugin.cfg", "res://addons/neuroark_tools/plugin.cfg", "res://addons/perfect_vertices_draw_for_polygon2d/plugin.cfg", "res://addons/vertices_and_weights_2d_swapper/plugin.cfg", "res://addons/very-simple-twitch/plugin.cfg")
 
 [file_customization]
 

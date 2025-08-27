@@ -1,0 +1,149 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3780x5iekg8t"]
+
+[ext_resource type="Script" uid="uid://s4ctktdsqaef" path="res://addons/vertices_and_weights_2d_swapper/vertices_and_weights_2d_swapper_container.gd" id="1_hc6jd"]
+
+[sub_resource type="Theme" id="Theme_xe5hr"]
+
+[node name="Swapper2D" type="Control"]
+clip_contents = true
+custom_minimum_size = Vector2(350, 1000)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainerMain" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hc6jd")
+
+[node name="ScrollContainerBones" type="ScrollContainer" parent="VBoxContainerMain"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainerBones" type="VBoxContainer" parent="VBoxContainerMain/ScrollContainerBones"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainerControls" type="HBoxContainer" parent="VBoxContainerMain/ScrollContainerBones/VBoxContainerBones"]
+layout_mode = 2
+
+[node name="ButtonSwapVerticesH" type="Button" parent="VBoxContainerMain/ScrollContainerBones/VBoxContainerBones/HBoxContainerControls"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "
+Swap vertices H
+
+"
+
+[node name="ButtonSwapVerticesV" type="Button" parent="VBoxContainerMain/ScrollContainerBones/VBoxContainerBones/HBoxContainerControls"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "
+Swap vertices V
+
+"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainerMain/ScrollContainerBones/VBoxContainerBones"]
+layout_mode = 2
+
+[node name="HBoxContainerBonesTitle" type="HBoxContainer" parent="VBoxContainerMain/ScrollContainerBones/VBoxContainerBones"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="LabelTotalBonesTitle" type="Label" parent="VBoxContainerMain/ScrollContainerBones/VBoxContainerBones/HBoxContainerBonesTitle"]
+layout_mode = 2
+text = "
+Total bones: 
+
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelTotalBonesNumber" type="Label" parent="VBoxContainerMain/ScrollContainerBones/VBoxContainerBones/HBoxContainerBonesTitle"]
+layout_mode = 2
+theme = SubResource("Theme_xe5hr")
+text = "
+#
+
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainerWeights" type="HBoxContainer" parent="VBoxContainerMain/ScrollContainerBones/VBoxContainerBones"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainerBonesCopy" type="VBoxContainer" parent="VBoxContainerMain/ScrollContainerBones/VBoxContainerBones/HBoxContainerWeights"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LabelFrom" type="Label" parent="VBoxContainerMain/ScrollContainerBones/VBoxContainerBones/HBoxContainerWeights/VBoxContainerBonesCopy"]
+layout_mode = 2
+text = "From"
+horizontal_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainerMain/ScrollContainerBones/VBoxContainerBones/HBoxContainerWeights"]
+layout_mode = 2
+size_flags_stretch_ratio = 2.0
+
+[node name="VBoxContainerBonesPaste" type="VBoxContainer" parent="VBoxContainerMain/ScrollContainerBones/VBoxContainerBones/HBoxContainerWeights"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LabelTo" type="Label" parent="VBoxContainerMain/ScrollContainerBones/VBoxContainerBones/HBoxContainerWeights/VBoxContainerBonesPaste"]
+layout_mode = 2
+text = "To"
+horizontal_alignment = 1
+
+[node name="VScrollBarBones" type="VScrollBar" parent="VBoxContainerMain/ScrollContainerBones/VBoxContainerBones/HBoxContainerWeights"]
+layout_mode = 2
+
+[node name="ButtonSwapWeights" type="Button" parent="VBoxContainerMain/ScrollContainerBones/VBoxContainerBones"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "
+Swap Bone Weights
+
+"
+
+[node name="ButtonCopyWeights" type="Button" parent="VBoxContainerMain/ScrollContainerBones/VBoxContainerBones"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "
+Copy Bone Weights
+
+"
+
+[node name="ButtonMoveWeights" type="Button" parent="VBoxContainerMain/ScrollContainerBones/VBoxContainerBones"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "
+Move Bone Weights
+
+"
+
+[node name="HSeparatorLastOperation" type="HSeparator" parent="VBoxContainerMain/ScrollContainerBones/VBoxContainerBones"]
+layout_mode = 2
+
+[node name="LabelLastOperation" type="Label" parent="VBoxContainerMain/ScrollContainerBones/VBoxContainerBones"]
+layout_mode = 2
+text = "
+
+
+"
+horizontal_alignment = 1
+vertical_alignment = 1
