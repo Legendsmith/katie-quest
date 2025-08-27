@@ -412,13 +412,13 @@ region_enabled = true
 region_rect = Rect2(772, 4, 128, 256)
 
 [node name="SpriteBolt" type="Sprite2D" parent="."]
-light_mask = 0
 visible = false
+light_mask = 0
 texture = SubResource("AtlasTexture_rrf83")
 
 [node name="SpriteLock" type="Sprite2D" parent="."]
-light_mask = 0
 visible = false
+light_mask = 0
 texture = SubResource("AtlasTexture_vrqlg")
 
 [node name="DoorEnterShape" type="CollisionShape2D" parent="."]
