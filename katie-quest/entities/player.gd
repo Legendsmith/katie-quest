@@ -92,7 +92,7 @@ func handle_rigidbody_interactions():
 		var collision = get_slide_collision(i)
 		var collider = collision.get_collider()
 		
-		if collider is RigidBody2D:
+		if collider is RigidBody2D or collider is PhysicalBone2D:
 			var rigid_body = collider as RigidBody2D
 			var collision_point = collision.get_position()
 			var collision_normal = collision.get_normal()
