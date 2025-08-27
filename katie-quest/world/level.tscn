@@ -41,11 +41,11 @@ shape = SubResource("WorldBoundaryShape2D_oh72w")
 position = Vector2(0, 3496)
 shape = SubResource("WorldBoundaryShape2D_paclj")
 
+[node name="Player" parent="." instance=ExtResource("4_ype84")]
+position = Vector2(1248, 496)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="GameInterface" parent="CanvasLayer" instance=ExtResource("2_jjmkw")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="Player" parent="." instance=ExtResource("4_ype84")]
-position = Vector2(1248, 496)
