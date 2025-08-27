@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://b2ydfsd8dpo3n" path="res://entities/emote_body.gd" id="1_ku76i"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6j2tc"]
+friction = 0.8
+rough = true
 bounce = 0.25
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0liwy"]
@@ -11,6 +13,7 @@ size = Vector2(56, 56)
 [node name="EmoteBody" type="RigidBody2D"]
 collision_layer = 13
 collision_mask = 0
+mass = 40.0
 physics_material_override = SubResource("PhysicsMaterial_6j2tc")
 script = ExtResource("1_ku76i")
 

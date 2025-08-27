@@ -23,14 +23,12 @@ expand_margin_bottom = 2.0
 anti_aliasing = false
 
 [node name="SpeechBubble" type="Node2D"]
-visibility_layer = 1
 script = ExtResource("1_ej4bd")
 
 [node name="Anchor" type="Node2D" parent="."]
 position = Vector2(-19, 0)
 
 [node name="Container" type="PanelContainer" parent="Anchor"]
-visibility_layer = 1
 offset_right = 40.0
 offset_bottom = 14.0
 size_flags_horizontal = 0

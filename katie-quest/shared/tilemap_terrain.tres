@@ -791,7 +791,6 @@ terrain_set_0/terrain_8/name = "walltop"
 terrain_set_0/terrain_8/color = Color(0.854187, 0.88, 0.1056, 1)
 terrain_set_0/terrain_9/name = "top_edge"
 terrain_set_0/terrain_9/color = Color(0.25, 0.3125, 0.5, 1)
-terrain_set_1/mode = 2
 navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_5oyf6")
 pattern_0 = SubResource("TileMapPattern_4vn8t")

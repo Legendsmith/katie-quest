@@ -41,7 +41,7 @@ func spawn_emote(texture:Texture2D=null):
 		new_emote.set_sprite(texture)
 	var angle = randf_range(0.0,TAU)
 	var spawn_position = Vector2(spawn_distance,0.0).rotated(angle)
-	var spawn_impulse = Vector2.UP.rotated(angle) * randf_range(spawn_impulse_min,spawn_impuse_max)
+	var spawn_impulse = Vector2.UP.rotated(angle) * randf_range(spawn_impulse_min,spawn_impuse_max)*new_emote.mass
 	add_child(new_emote)
 	new_emote.position = spawn_position
 	new_emote.apply_central_force(spawn_impulse)
