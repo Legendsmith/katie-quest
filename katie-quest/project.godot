@@ -27,6 +27,7 @@ VerySimpleTwitch="*res://addons/very-simple-twitch/twitch_node.gd"
 Fade="*res://scenes/fade.tscn"
 DataManager="*res://data/DataManager.gd"
 Cursor="*res://scripts/cursor.gd"
+SaveManager="*res://data/SaveManager.gd"
 
 [dialogic]
 
