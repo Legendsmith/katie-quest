@@ -4,7 +4,6 @@
 		{"id":"82c6e3ac84be3e41","type":"group","x":-571,"y":-560,"width":1171,"height":400,"label":"Part 2"},
 		{"id":"4b47f7e2076079c0","type":"group","x":-571,"y":-60,"width":1151,"height":400,"label":"Part 3"},
 		{"id":"abf47703d7fe027b","type":"text","text":"Start","x":-115,"y":-1400,"width":275,"height":60,"color":"3"},
-		{"id":"6062790a826c4ed4","type":"text","text":"Vampiia\nSuliaDH\nSpite\nAuteru\nIsaa Corva\nMelizande\nSpellydoesart\nSaiiren\nZephyrianna\nSixteenInMono\nEsparaVT\nRubensargasm\nFufu","x":0,"y":-520,"width":250,"height":346},
 		{"id":"1a1bf35014a71139","type":"text","text":"Final Room","x":-520,"y":3,"width":250,"height":60},
 		{"id":"dee43f328edae43f","type":"text","text":"Video","x":-520,"y":155,"width":250,"height":60},
 		{"id":"1e821fca4daa7176","type":"text","text":"End","x":-150,"y":520,"width":310,"height":60,"color":"3"},
@@ -12,9 +11,10 @@
 		{"id":"2dbc67d378939e0f","type":"text","text":"EllyEN\nDyaRikku\nFefe\nYoclesh\nCottontailVA\nBuffpup","x":205,"y":-900,"width":250,"height":186},
 		{"id":"dcc5bafdfa04d095","type":"text","text":"Heavenly gives Fatebringer (Legally Distinct)","x":-500,"y":-1101,"width":250,"height":60},
 		{"id":"0ab8e481327c404c","type":"text","text":"Zentreya gives Stamina Bar","x":-500,"y":-954,"width":250,"height":60},
+		{"id":"6062790a826c4ed4","type":"text","text":"Vampiia\nSuliaDH\nSpite\nAuteru\nIsaa Corva\nMelizande\nSpellydoesart\nSaiiren\nZephyrianna\nSixteenInMono\nEsparaVT\nRubensargasm\nFufu","x":0,"y":-520,"width":250,"height":346},
 		{"id":"a26f40d55b901b9d","type":"text","text":"Sheza gives Sprint? (cat mode)","x":-500,"y":-834,"width":250,"height":66},
 		{"id":"2f020010547ca05a","type":"text","text":"Fraiki\nCanadianThor\nFenariMori\nTogichu\nMysticLight\nHypaVox\nx3Dustco\nUghItsT0m\nQuinnscyn","x":-10,"y":-12,"width":250,"height":256},
-		{"id":"5990dd997179cbcf","type":"text","text":"NeoPoSenpai\nAtteraNox\nBipsyGG\nVexoria\nTrickiwi","x":320,"y":-347,"width":250,"height":166}
+		{"id":"5990dd997179cbcf","type":"text","text":"NeoPoSenpai\nAtteraNox\nBipsyGG\nVexoria\nTrickiwi","x":295,"y":-460,"width":250,"height":166}
 	],
 	"edges":[
 		{"id":"dcfe50be677444a1","fromNode":"abf47703d7fe027b","fromSide":"bottom","toNode":"b52c470eff1009c1","toSide":"top"},

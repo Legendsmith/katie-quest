@@ -12,10 +12,17 @@
             "id": "85fe7792bc5bf035",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "New tab"
+              "type": "canvas",
+              "state": {
+                "file": "Design.canvas",
+                "viewState": {
+                  "x": -107.50757002271004,
+                  "y": -378.67373202119603,
+                  "zoom": -0.7213734874700791
+                }
+              },
+              "icon": "lucide-layout-dashboard",
+              "title": "Design"
             }
           },
           {
@@ -218,8 +225,8 @@
   },
   "active": "85fe7792bc5bf035",
   "lastOpenFiles": [
-    "Design.canvas",
     "Level Notes.md",
+    "Design.canvas",
     "Style Guide.md",
     "Untitled.base",
     "Tasks & Design.md",
