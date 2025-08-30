@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfhhc0a86tw6d"]
+
+[ext_resource type="PackedScene" uid="uid://c345ttforl3od" path="res://entities/character_interactable.tscn" id="1_m5hkn"]
+[ext_resource type="Texture2D" uid="uid://cnnscirris27e" path="res://texture/attera_nox_front.png" id="2_be2h1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b1m2f"]
+size = Vector2(44, 123)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hu7ai"]
+size = Vector2(34, 22)
+
+[node name="Character" instance=ExtResource("1_m5hkn")]
+character_name = "AtteraNox"
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_b1m2f")
+
+[node name="CollisionShape2D" parent="Blocker" index="0"]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_hu7ai")
+
+[node name="Sprite2D" parent="." index="2"]
+texture = ExtResource("2_be2h1")
