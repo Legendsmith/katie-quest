@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://c0lbg0cpx7n1l"]
+
+[ext_resource type="PackedScene" uid="uid://c345ttforl3od" path="res://entities/character_interactable.tscn" id="1_cnv2o"]
+[ext_resource type="Texture2D" uid="uid://cg8r2ycof6n0d" path="res://texture/buffpup_tail_front.png" id="2_stscn"]
+[ext_resource type="Texture2D" uid="uid://nrpmd5a4ehvj" path="res://texture/buffpup_front_a.png" id="3_8wqw4"]
+
+[sub_resource type="Animation" id="Animation_uyj7a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tail:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_d12ge"]
+resource_name = "idle"
+length = 0.1
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tail:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.785397]
+}
+
+[sub_resource type="Animation" id="Animation_atns6"]
+resource_name = "idle"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qyhdr"]
+_data = {
+&"RESET": SubResource("Animation_uyj7a"),
+&"idle": SubResource("Animation_atns6"),
+&"wag": SubResource("Animation_d12ge")
+}
+
+[node name="Character" instance=ExtResource("1_cnv2o")]
+character_name = "Buffpup"
+
+[node name="Tail" type="Sprite2D" parent="." index="2"]
+position = Vector2(0, -65)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_stscn")
+offset = Vector2(25, 22)
+
+[node name="Sprite2D" parent="." index="3"]
+texture = ExtResource("3_8wqw4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
+libraries = {
+&"": SubResource("AnimationLibrary_qyhdr")
+}

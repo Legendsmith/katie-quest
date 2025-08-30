@@ -32,6 +32,7 @@ VerySimpleTwitch="*res://addons/very-simple-twitch/twitch_node.gd"
 [dialogic]
 
 directories/dch_directory={
+"buffpup": "res://shared/buffpup.dch",
 "heavenly_father": "res://shared/heavenly_father.dch",
 "katie": "res://shared/katie.dch"
 }
