@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3lsym2tm2w78"]
+
+[ext_resource type="PackedScene" uid="uid://c345ttforl3od" path="res://entities/character_interactable.tscn" id="1_5rhcv"]
+[ext_resource type="Texture2D" uid="uid://c5t0ebas6yah8" path="res://texture/auteru_front.png" id="2_3bh6i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3bh6i"]
+size = Vector2(34, 22)
+
+[node name="Character" instance=ExtResource("1_5rhcv")]
+character_name = "Auteru"
+
+[node name="CollisionShape2D" parent="Blocker" index="0"]
+position = Vector2(-3, -5)
+shape = SubResource("RectangleShape2D_3bh6i")
+
+[node name="Sprite2D" parent="." index="2"]
+texture = ExtResource("2_3bh6i")

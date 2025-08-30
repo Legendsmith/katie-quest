@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://cg8r2ycof6n0d" path="res://texture/buffpup_tail_front.png" id="2_stscn"]
 [ext_resource type="Texture2D" uid="uid://nrpmd5a4ehvj" path="res://texture/buffpup_front_a.png" id="3_8wqw4"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_stscn"]
+radius = 18.0278
+
 [sub_resource type="Animation" id="Animation_uyj7a"]
 length = 0.001
 tracks/0/type = "value"
@@ -36,18 +39,18 @@ tracks/0/keys = {
 "values": [0.0, -0.785397]
 }
 
-[sub_resource type="Animation" id="Animation_atns6"]
-resource_name = "idle"
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qyhdr"]
 _data = {
 &"RESET": SubResource("Animation_uyj7a"),
-&"idle": SubResource("Animation_atns6"),
 &"wag": SubResource("Animation_d12ge")
 }
 
 [node name="Character" instance=ExtResource("1_cnv2o")]
 character_name = "Buffpup"
+
+[node name="CollisionShape2D" parent="Blocker" index="0"]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_stscn")
 
 [node name="Tail" type="Sprite2D" parent="." index="2"]
 position = Vector2(0, -65)

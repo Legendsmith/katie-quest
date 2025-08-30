@@ -7,3 +7,6 @@
 [node name="Character" instance=ExtResource("1_dwtcp")]
 character_name = "Heavenly Father"
 timelines = Array[ExtResource("2_orlm0")]([ExtResource("3_fbew6")])
+
+[node name="CollisionShape2D" parent="Blocker" index="0"]
+position = Vector2(0, -7)
