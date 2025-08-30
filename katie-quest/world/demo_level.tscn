@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bf6qk0nlhoxep" path="res://world/level.gd" id="1_1rrtn"]
 [ext_resource type="PackedScene" uid="uid://fi1vweeb0dv7" path="res://entities/player.tscn" id="2_1sosw"]
 [ext_resource type="TileSet" uid="uid://1vg45lovvy1x" path="res://shared/tilemap_terrain.tres" id="2_6ehlu"]
-[ext_resource type="PackedScene" uid="uid://di7i0silkasye" path="res://entities/enemy.tscn" id="4_2d02d"]
+[ext_resource type="PackedScene" uid="uid://di7i0silkasye" path="res://entities/enemy_skull.tscn" id="4_2d02d"]
 [ext_resource type="PackedScene" uid="uid://dbedhisidluun" path="res://entities/terrain/lightA_N.tscn" id="5_aw11e"]
 [ext_resource type="PackedScene" uid="uid://bdvqrieymxq8y" path="res://ui/game_interface.tscn" id="5_yba56"]
 [ext_resource type="PackedScene" uid="uid://b2svwde8unvv4" path="res://entities/terrain/lightA_S.tscn" id="6_cgi00"]
